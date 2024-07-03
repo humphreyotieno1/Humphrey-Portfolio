@@ -23,7 +23,7 @@ const Portfolio = () => {
       image: '/data.jpg',
       title: 'TechVerse',
       description: 'TechVerse is an application (still in the works) that is designed to be a platform where students can get authentic and verified information/inspiration/advice about the tech space. The information will be in the form of videos, audio, or articles/blogs created by the Moringa school community.',
-      github: 'https://github.com/KaizeninCode/TechVerse'
+      github: 'https://techverse-1.onrender.com'
     }
   ];
 
