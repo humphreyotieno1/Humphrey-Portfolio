@@ -28,7 +28,7 @@ const Contact = () => {
       message: message,
     };
 
-    emailjs.send('service_kiy02zr', 'template_wydjz2d', templateParams, 'YOUR_USER_ID')
+    emailjs.send('service_kiy02zr', 'template_wydjz2d', templateParams)
       .then((response) => {
         toast({
           title: "Success",
