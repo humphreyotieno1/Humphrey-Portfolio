@@ -28,7 +28,7 @@ const Contact = () => {
       message: message,
     };
 
-    emailjs.send('service_kiy02zr', 'template_wydjz2d', templateParams, 'YOUR_USER_ID')
+    emailjs.send('service_kiy02zr', 'template_wydjz2d', templateParams)
       .then((response) => {
         toast({
           title: "Success",
@@ -61,20 +61,17 @@ const Contact = () => {
             placeholder="Name" 
             value={name}
             onChange={(e) => setName(e.target.value)}
-            isRequired
           />
           <Input 
             placeholder="Email" 
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            isRequired
           />
           <Textarea 
             placeholder="Your Message" 
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            isRequired
           />
           <Button colorScheme="teal" variant="solid" type="submit">Send Message</Button>
         </VStack>
