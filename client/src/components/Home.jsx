@@ -39,7 +39,7 @@ const Home = () => {
             </VStack>
           </Box>
           <Box flex="1">
-            <Image src="/hum.jpg" alt="Humphrey Otieno" borderRadius="full" boxSize="200px" />
+            <Image src="/humlogo.png" alt="Humphrey Otieno" borderRadius="full" boxSize="200px" />
           </Box>
           <Box flex="1" display={{ base: 'block', md: 'none' }}>
             <VStack spacing={6} alignItems="flex-start">
