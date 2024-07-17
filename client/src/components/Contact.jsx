@@ -43,7 +43,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch('https://humphrey-portfolio-rho.vercel.app/contact', {
+      const response = await fetch('https://humphrey-portfolio-1.onrender.com/contact', {
         method: 'POST',
         body: formData,
       });
