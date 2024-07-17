@@ -63,7 +63,7 @@ const Home = () => {
                   <FaLinkedin size="2em" />
                 </Link>
               </HStack>
-              <Link href='https://t.ly/yOhrU' isExternal>
+              <Link href='https://www.canva.com/design/DAGGjSAQwM4/bZhe60u5L94EuqLOhqaj-g/view?utm_content=DAGGjSAQwM4&utm_campaign=designshare&utm_medium=link&utm_source=editor' isExternal>
                 <Button colorScheme="teal" variant="outline">Find CV</Button>
               </Link>
             </VStack>
