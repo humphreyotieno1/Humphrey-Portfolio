@@ -50,14 +50,26 @@ const Portfolio = () => {
                 width="100%"
                 maxW="md"  // Set to "md" for a wider card
                 height="auto"  // Allow height to be adjusted automatically based on content
+                display="flex"
+                flexDirection="column"
               >
                 <Image src={project.image} alt={project.title} objectFit="cover" height="200px" width="100%" />
-                <Box p={4}>
+                <Box p={4} flex="1" display="flex" flexDirection="column">
                   <Text mt={4} fontWeight="bold" fontSize="xl" textAlign="center">
                     {project.title}
                   </Text>
-                  <Text mt={4}>{project.description}</Text>
-                  <Button mt={4} colorScheme="teal" width="100%">
+                  <Text mt={4} flex="1">
+                    {project.description}
+                  </Text>
+                  <Button
+                    mt={4}
+                    variant="outline"
+                    borderColor="teal.500"
+                    color="teal.500"
+                    _hover={{ bg: 'teal.500', color: 'white' }}
+                    width="100%"
+                    alignSelf="center"
+                  >
                     <Link href={project.github} isExternal>
                       View Project
                     </Link>

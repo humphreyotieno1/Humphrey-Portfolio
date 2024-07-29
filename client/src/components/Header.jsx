@@ -26,6 +26,7 @@ const Header = () => {
           <Link to="/about">About Me</Link>
           <Link to="/services">Services</Link>
           <Link to="/portfolio">Portfolio</Link>
+          <Link to="/achievements">Achievements</Link>
           <Link to="/contact">Contact</Link>
         </HStack>
         <Button
@@ -51,6 +52,7 @@ const Header = () => {
             <Link to="/about" onClick={onClose}>About Me</Link>
             <Link to="/services" onClick={onClose}>Services</Link>
             <Link to="/portfolio" onClick={onClose}>Portfolio</Link>
+            <Link to="/achievements" onClick={onClose}>Achievements</Link>
             <Link to="/contact" onClick={onClose}>Contact</Link>
             <Button
               as={Link}
