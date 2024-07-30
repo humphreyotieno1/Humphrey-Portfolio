@@ -18,9 +18,9 @@ const Services = () => {
               <Box borderWidth="1px" borderRadius="xl" overflow="hidden" boxShadow="lg">
                 <Image src="/web.jpg" alt="Web Design" boxSize="100%" objectFit="cover" />
                 <VStack p={4} alignItems="flex-start">
-                  <Text fontWeight="bold" fontSize="xl">Web Design</Text>
+                  <Text fontWeight="bold" fontSize="xl">Website and Database Design</Text>
                   <Text>
-                    I specialize in designing visually appealing and user-friendly websites that not only captivate audiences but also enhance brand identity.
+                  I specialize in crafting visually appealing and intuitive websites that enhance user experience and solidify brand identity.
                   </Text>
                 </VStack>
               </Box>
@@ -31,18 +31,18 @@ const Services = () => {
                 <VStack p={4} alignItems="flex-start">
                   <Text fontWeight="bold" fontSize="xl">Web Development</Text>
                   <Text>
-                    My passion lies in developing dynamic and interactive web applications that deliver seamless digital experiences and drive user engagement.
+                  My passion lies in creating dynamic and interactive web applications that provide seamless and engaging digital experiences, enhancing user interaction and satisfaction.
                   </Text>
                 </VStack>
               </Box>
             </motion.div>
             <motion.div initial="hidden" animate="visible" variants={variants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Box borderWidth="1px" borderRadius="xl" overflow="hidden" boxShadow="lg">
-                <Image src="/db.jpg" alt="Mobile Application Development" boxSize="100%" objectFit="cover" />
+                <Image src="/webapp.jpg" alt="Mobile Application Development" boxSize="100%" objectFit="cover" />
                 <VStack p={4} alignItems="flex-start">
-                  <Text fontWeight="bold" fontSize="xl">Mobile Application Development</Text>
+                  <Text fontWeight="bold" fontSize="xl">Web Application Development</Text>
                   <Text>
-                    I create intuitive and feature-rich mobile applications that provide on-the-go solutions and enhance user convenience.
+                    I create intuitive and feature-rich website applications that provide on-the-go solutions and enhance user convenience.
                   </Text>
                 </VStack>
               </Box>

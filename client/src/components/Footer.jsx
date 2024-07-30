@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Container, SimpleGrid, VStack, Heading, Text, Link, HStack } from '@chakra-ui/react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaDiscord, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -24,16 +24,16 @@ const Footer = () => {
           <VStack align="start">
             <Heading fontSize="lg">Follow</Heading>
             <HStack spacing={4}>
-              <Link href="https://facebook.com/yourprofile" isExternal>
-                <FaFacebook size="1.5em" />
+              <Link href="https://discordapp.com/users/1150702066721890336" isExternal>
+                <FaDiscord size="1.5em" />
               </Link>
-              <Link href="https://twitter.com/yourprofile" isExternal>
+              <Link href="https://x.com/_Banta__" isExternal>
                 <FaTwitter size="1.5em" />
               </Link>
-              <Link href="https://instagram.com/yourprofile" isExternal>
+              <Link href="https://www.instagram.com/bant.a_/?igsh=Y2NvMTFsdDZjNzgx" isExternal>
                 <FaInstagram size="1.5em" />
               </Link>
-              <Link href="https://linkedin.com/in/yourprofile" isExternal>
+              <Link href="https://www.linkedin.com/in/humphrey-otieno" isExternal>
                 <FaLinkedin size="1.5em" />
               </Link>
             </HStack>

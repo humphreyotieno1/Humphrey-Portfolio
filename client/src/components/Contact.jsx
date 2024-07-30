@@ -134,7 +134,7 @@ const Contact = () => {
               htmlFor="fileInput"
               colorScheme="teal"
               variant="solid"
-              bg="lightgreen"
+              bg="teal"
               _hover={{ bg: "green.200" }}
               cursor="pointer"
             >
