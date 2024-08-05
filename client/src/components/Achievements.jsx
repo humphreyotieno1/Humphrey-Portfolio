@@ -12,7 +12,7 @@ const Achievements = () => {
         },
         {
             id: 2,
-            image: '/https://res.cloudinary.com/drdradtyj/image/upload/v1722839593/fullstack.jpg',
+            image: '/fullstack.jpg',
             title: 'Moringa Full-Stack Software Engineering',
             description: 'Graduated from a rigorous 6-month Full Stack software engineering program at Moringa School, gaining comprehensive skills in both front-end and back-end development. Graduated on 2nd August 2024.'
         },
