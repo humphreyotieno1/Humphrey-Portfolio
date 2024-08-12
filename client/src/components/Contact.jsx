@@ -12,6 +12,7 @@ const Contact = () => {
     agreed: false,
     attachment: null,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const toast = useToast();
 
   const handleChange = (e) => {
@@ -38,11 +39,13 @@ const Contact = () => {
         title: "Error",
         description: "All required fields must be filled out.",
         status: "error",
-        duration: 5000,
+        duration: 3000, // Shorter duration for quicker feedback
         isClosable: true,
       });
       return;
     }
+
+    setIsSubmitting(true);
 
     const data = new FormData();
     for (const key in formData) {
@@ -63,7 +66,7 @@ const Contact = () => {
           title: "Success",
           description: result.message,
           status: "success",
-          duration: 5000,
+          duration: 3000, // Shorter duration for quicker feedback
           isClosable: true,
         });
         setFormData({
@@ -84,9 +87,11 @@ const Contact = () => {
         title: "Error",
         description: "An error occurred. Please try again later.",
         status: "error",
-        duration: 5000,
+        duration: 3000, // Shorter duration for quicker feedback
         isClosable: true,
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -102,6 +107,7 @@ const Contact = () => {
             value={formData.firstName}
             onChange={handleChange}
             isRequired
+            isDisabled={isSubmitting}
           />
           <Input
             placeholder="Last Name"
@@ -109,12 +115,14 @@ const Contact = () => {
             value={formData.lastName}
             onChange={handleChange}
             isRequired
+            isDisabled={isSubmitting}
           />
           <Input
             placeholder="Company"
             name="company"
             value={formData.company}
             onChange={handleChange}
+            isDisabled={isSubmitting}
           />
           <Input
             placeholder="Email"
@@ -123,12 +131,14 @@ const Contact = () => {
             value={formData.email}
             onChange={handleChange}
             isRequired
+            isDisabled={isSubmitting}
           />
           <Input
             placeholder="Phone Number"
             name="phoneNumber"
             value={formData.phoneNumber}
             onChange={handleChange}
+            isDisabled={isSubmitting}
           />
           <Textarea
             placeholder="Your Message"
@@ -136,6 +146,7 @@ const Contact = () => {
             value={formData.message}
             onChange={handleChange}
             isRequired
+            isDisabled={isSubmitting}
           />
           <FormControl>
             <FormLabel>Attachment</FormLabel>
@@ -144,6 +155,7 @@ const Contact = () => {
               onChange={handleFileChange}
               display="none"
               id="fileInput"
+              isDisabled={isSubmitting}
             />
             <Button
               as="label"
@@ -153,12 +165,22 @@ const Contact = () => {
               bg="teal"
               _hover={{ bg: "green.200" }}
               cursor="pointer"
+              isDisabled={isSubmitting}
             >
               Choose File
             </Button>
             {formData.attachment && <Text mt={2}>{formData.attachment.name}</Text>}
           </FormControl>
-          <Button colorScheme="teal" variant="solid" type="submit">Send Message</Button>
+          <Button
+            colorScheme="teal"
+            variant="solid"
+            type="submit"
+            isLoading={isSubmitting}
+            loadingText="Sending"
+            spinnerPlacement="start"
+          >
+            Send Message
+          </Button>
         </VStack>
       </Container>
     </Box>
