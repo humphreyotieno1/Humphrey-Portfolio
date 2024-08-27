@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Container, Heading, VStack, SimpleGrid, Image, Text, Button } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const variants = {
@@ -48,7 +49,7 @@ const Services = () => {
               </Box>
             </motion.div>
           </SimpleGrid>
-          <Button colorScheme="teal" variant="outline" size="lg">Hire Me</Button>
+          <Button as={Link} to="/contact" colorScheme="teal" variant="outline" size="lg">Hire Me</Button>
         </VStack>
       </Container>
     </Box>
