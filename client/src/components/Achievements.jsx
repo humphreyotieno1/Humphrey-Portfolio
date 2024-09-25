@@ -21,6 +21,11 @@ const Achievements = () => {
             image: '/mozilla.png',
             title: 'Mozilla Web Literacy Foundational Course',
             description: 'Participated in a foundational web literacy workshop conducted by Mozilla at Moringa School, enhancing skills in web technologies and digital literacy.'
+        },
+        {
+            id: 4,
+            image: './plphackathon.jpg',
+            description: 'Participated in the August Cohort Hackathon on September 9th, 2024, with a focus on building dynamic personal portfolio websites. Partipants were to showcase their web development skills by highlighting their programming knowledge, projects, and passions through the creation of individual portfolio websites.'
         }
     ];
 
