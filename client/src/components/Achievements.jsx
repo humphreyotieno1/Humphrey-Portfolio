@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box, Container, Heading, SimpleGrid, Image, Text, VStack, Button, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
@@ -12,7 +12,7 @@ const Achievements = () => {
         },
         {
             id: 2,
-            image: '/fullstack.jpg',
+            image: '/moringa.jpg',
             title: 'Moringa Full-Stack Software Engineering',
             description: 'Graduated from a rigorous 6-month Full Stack software engineering program at Moringa School, gaining comprehensive skills in both front-end and back-end development. Graduated on 2nd August 2024.'
         },
@@ -24,8 +24,13 @@ const Achievements = () => {
         },
         {
             id: 4,
-            image: './plphackathon.jpg',
+            image: '/plphackathon.jpg',
             description: 'Participated in the August Cohort Hackathon on September 9th, 2024, with a focus on building dynamic personal portfolio websites. Partipants were to showcase their web development skills by highlighting their programming knowledge, projects, and passions through the creation of individual portfolio websites.'
+        },
+        {
+            id: 5,
+            image: '/bronze.jpg',
+            description: 'Participated in the Huawei World Skills Competition under IT Software Solutions for Business category, winning a bronze medal for Multimedia University of Kenya. The competition was held in Nairobi, Kenya, in September 2024 at Kenya School of TVET.'
         }
     ];
 
