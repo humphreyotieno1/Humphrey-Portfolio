@@ -18,9 +18,9 @@ const Achievements = () => {
         },
         {
             id: 3,
-            image: '/mozilla.png',
-            title: 'Mozilla Web Literacy Foundational Course',
-            description: 'Participated in a foundational web literacy workshop conducted by Mozilla at Moringa School, enhancing skills in web technologies and digital literacy.'
+            image: 'aiessentials.png',
+            title: 'AI Career Essentials',
+            description: 'Completed the AI Career Essentials course by deeplearning.ai, gaining foundational knowledge in AI, machine learning, deep learning, and natural language processing.The course was completed on 5th November 2024.'
         },
         {
             id: 4,
@@ -31,6 +31,12 @@ const Achievements = () => {
             id: 5,
             image: '/bronze.jpg',
             description: 'Participated in the Huawei World Skills Competition under IT Software Solutions for Business category, winning a bronze medal for Multimedia University of Kenya. The competition was held in Nairobi, Kenya, in September 2024 at Kenya School of TVET.'
+        },
+        {
+            id: 6,
+            image: '/mozilla.png',
+            title: 'Mozilla Web Literacy Foundational Course',
+            description: 'Participated in a foundational web literacy workshop conducted by Mozilla at Moringa School, enhancing skills in web technologies and digital literacy.'
         }
     ];
 

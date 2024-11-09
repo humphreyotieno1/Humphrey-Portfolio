@@ -4,29 +4,43 @@ import { motion } from 'framer-motion';
 
 const Portfolio = () => {
   const projects = [
+    // {
+    //   id: 1,
+    //   image: '/geocel.png',
+    //   title: 'Geocel Enterprises Ltd',
+    //   description: 'The Geocel Enterprises web application project aims to develop a comprehensive online platform that will help the company effectively market its goods and reach a wider range of customers. The website is designed to enable customers to interactively explore the various products and services offered, making informed purchasing decisions and comparing costs.',
+    //   link: 'https://geocel-enterprises-ltd.onrender.com/'
+    // },
     {
       id: 1,
-      image: '/geocel.png',
-      title: 'Geocel Enterprises Ltd',
-      description: 'The Geocel Enterprises web application project aims to develop a comprehensive online platform that will help the company effectively market its goods and reach a wider range of customers. The website is designed to enable customers to interactively explore the various products and services offered, making informed purchasing decisions and comparing costs.',
-      link: 'https://geocel-enterprises-ltd.onrender.com/'
+      image: '/kingdom.png',
+      title: 'Kingdom Call',
+      description: 'A dynamic and spiritually enriching platform designed to connect, inspire, and support the community in their faith journey. This project is created to provide a seamless user experience for visitors seeking information, inspiration, and engagement with the ministry.',
+      link: 'https://kingdom-call.vercel.app/'
     },
     {
       id: 2,
+      image: 'legalizeme.png',
+      title: 'LegalizeMe',
+      description: 'LegalizeMe is a legal services web application designed to simplify the process of accessing legal assistance and services. The platform aims to connect individuals and businesses with legal professionals, providing a seamless and efficient way to address their legal needs.',
+      link: 'https://legalize-me.vercel.app/'
+    },
+    {
+      id: 3,
       image: '/data.jpg',
       title: 'TechVerse',
       description: 'TechVerse is an application (still in the works) that is designed to be a platform where students can get authentic and verified information/inspiration/advice about the tech space. The information will be in the form of videos, audio, or articles/blogs created by the Moringa school community.',
       link: 'https://techverse-1.onrender.com'
     },
     {
-      id: 3,
+      id: 4,
       image: '/db.jpg',
       title: 'The Bookstore',
       description: 'The Bookstore is a Python-based application designed to simplify the management of books, authors, and courses in a library setting. It offers a user-friendly interface for librarians or administrators to perform various tasks such as adding new books, viewing existing books, deleting books, managing authors, and managing courses.',
       link: 'https://github.com/humphreyotieno1/Bookstore'
     },
     {
-      id: 4,
+      id: 5,
       image: '/homepage.png',
       title: 'TravelXperience',
       description: 'TravelXperience is a modern travel and tourism web application designed to revolutionize the way people plan, book, and experience their travel adventures. With its user-friendly interface, extensive features, and cutting-edge technologies, TravelXperience aims to provide travelers with a seamless and unforgettable journey from start to finish.',
