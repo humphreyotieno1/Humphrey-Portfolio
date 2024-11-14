@@ -23,7 +23,7 @@ const Portfolio = () => {
       image: 'legalizeme.png',
       title: 'LegalizeMe',
       description: 'LegalizeMe is a legal services web application designed to simplify the process of accessing legal assistance and services. The platform aims to connect individuals and businesses with legal professionals, providing a seamless and efficient way to address their legal needs.',
-      link: 'https://legalize-me.vercel.app/'
+      link: 'https://www.legalizeme.site/'
     },
     {
       id: 3,
