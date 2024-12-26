@@ -1,59 +1,60 @@
 import React from 'react';
-import { Box, Container, Heading, VStack, SimpleGrid, Image, Text, Button } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
-const Services = () => {
-  const variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 }
-  };
+export default function Services() {
+
+  const services = [
+    {
+      title: "Full Stack Web Development",
+      desc: "My passion lies in creating dynamic and interactive web applications that provide seamless and engaging digital experiences, enhancing user interaction and satisfaction. ",
+      img: "/webapp.jpg",
+    },
+    {
+      title: "Database and API Design",
+      desc: "I have experience working with databases and APIs to create robust and scalable applications. I can help you design and implement databases and APIs that meet your specific needs.",
+      img: "/db.jpg",
+    },
+    {
+      title: "Web Design",
+      desc: "I specialise in creating visually appealing and user-friendly websites that are designed to engage and captivate users, while also providing a seamless and intuitive user experience.",
+      img: "/web.jpg",
+    },
+  ]
 
   return (
-    <Box>
-      <Container maxW="container.lg" py={20}>
-        <VStack spacing={8}>
-          <Heading>My Services</Heading>
-          <SimpleGrid columns={[1, 2, 3]} spacing={8}>
-            <motion.div initial="hidden" animate="visible" variants={variants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Box borderWidth="1px" borderRadius="xl" overflow="hidden" boxShadow="lg">
-                <Image src="/web.jpg" alt="Web Design" boxSize="100%" objectFit="cover" />
-                <VStack p={4} alignItems="flex-start">
-                  <Text fontWeight="bold" fontSize="xl">Website and Database Design</Text>
-                  <Text>
-                  I specialize in crafting visually appealing and intuitive websites that enhance user experience and solidify brand identity.
-                  </Text>
-                </VStack>
-              </Box>
-            </motion.div>
-            <motion.div initial="hidden" animate="visible" variants={variants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Box borderWidth="1px" borderRadius="xl" overflow="hidden" boxShadow="lg">
-                <Image src="/dev.jpg" alt="Web Development" boxSize="100%" objectFit="cover" />
-                <VStack p={4} alignItems="flex-start">
-                  <Text fontWeight="bold" fontSize="xl">Web Development</Text>
-                  <Text>
-                  My passion lies in creating dynamic and interactive web applications that provide seamless and engaging digital experiences, enhancing user interaction and satisfaction.
-                  </Text>
-                </VStack>
-              </Box>
-            </motion.div>
-            <motion.div initial="hidden" animate="visible" variants={variants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Box borderWidth="1px" borderRadius="xl" overflow="hidden" boxShadow="lg">
-                <Image src="/webapp.jpg" alt="Mobile Application Development" boxSize="100%" objectFit="cover" />
-                <VStack p={4} alignItems="flex-start">
-                  <Text fontWeight="bold" fontSize="xl">Web Application Development</Text>
-                  <Text>
-                    I create intuitive and feature-rich website applications that provide on-the-go solutions and enhance user convenience.
-                  </Text>
-                </VStack>
-              </Box>
-            </motion.div>
-          </SimpleGrid>
-          <Button as={Link} to="/contact" colorScheme="teal" variant="outline" size="lg">Hire Me</Button>
-        </VStack>
-      </Container>
-    </Box>
-  );
-};
-
-export default Services;
+    <section className="mt-12 mx-auto px-4 max-w-screen-xl md:px-8 font-sans" id='services'>
+      <div className="text-center justify-center items-center mx-auto max-w-xl space-y-3">
+        <h1 className="text-2xl text-indigo-600 font-semibold">
+          My Services
+        </h1>
+        <p className="mt-3 text-black text-lg justify-center text-center">
+          My services are designed to help you succeed in your projects and achieve your goals. I offer a range of services, including web development, web design, and more. Contact me to learn more about how I can help you.
+        </p>
+      </div>
+      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          services.map((items, key) => (
+            <article className="max-w-xs mx-auto mt-4 shadow-lg border rounded-md duration-300 hover:shadow-sm" key={key}>
+              <a href={items.href}>
+                <img src={items.img} loading="lazy" alt={items.title} className="w-full h-48 rounded-t-md" />
+                <div className="pt-3 ml-4 mr-2 mb-3">
+                  <h3 className="text-lg text-black font-semibold">
+                    {items.title}
+                  </h3>
+                  <p className="text-black text-md mt-1">{items.desc}</p>
+                </div>
+              </a>
+            </article>
+          ))
+        }
+      </div>
+      <div className="flex justify-center mt-8">
+        <a href="#contact" className="inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded-full whitespace-nowrap bg-black hover:bg-blue-600 focus:bg-cyan-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-cyan-300 disabled:bg-cyan-300 disabled:shadow-none">
+          <span>Contact</span>
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M10 18a1 1 0 01-.707-.293l-7-7a1 1 0 011.414-1.414L9 14.586V3a1 1 0 112 0v11.586l5.293-5.293a1 1 0 011.414 1.414l-7 7A1 1 0 0110 18z" clipRule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  )
+}

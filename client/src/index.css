@@ -7,3 +7,44 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+.fixed {
+  position: fixed;
+}
+
+.bottom-5 {
+  bottom: 1.25rem;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes moveDots {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
+}
+
+.moving-dots {
+  background: radial-gradient(circle, #aaa4a4 1px, transparent 1px);
+  background-size: 5px 5px;
+  animation: moveDots 5s linear infinite;
+  height: 100vh; /* Full viewport height */
+  width: 100%;    /* Full width */
+}

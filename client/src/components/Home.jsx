@@ -70,7 +70,7 @@ const Home = () => {
           </Box>
         </SimpleGrid>
 
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10} mt={20}>
+        {/* <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10} mt={20}>
           <MotionBox
             as={RouterLink} to="/about"
             bg="white"
@@ -115,7 +115,7 @@ const Home = () => {
             <Text mt={4}>Take a look at some of the projects I've worked on.</Text>
             <Button mt={4} colorScheme="teal">Learn More</Button>
           </MotionBox>
-        </SimpleGrid>
+        </SimpleGrid> */}
       </Container>
     </Box>
   );
