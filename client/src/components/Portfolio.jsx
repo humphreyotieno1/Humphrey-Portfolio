@@ -17,18 +17,18 @@ export default function Portfolio() {
       description: "A platform designed to connect, inspire, and support the community in their faith journey, providing a seamless user experience for visitors seeking information and engagement with the ministry."
     },
     {
+      name: "Chrispin Oguna's Portfolio",
+      company: "Chrispin Oguna",
+      imgUrl: "/chris.png",
+      liveUrl: "https://chrispinoguna.vercel.app/",
+      description: "A portfolio website for an ICT instructor, showcasing his skills, projects, and experiences in the tech industry. The platform aims to provide a comprehensive overview of his work and expertise to potential clients and employers."
+    },
+    {
       name: "Techverse",
       company: "Techverse",
       imgUrl: "/data.jpg",
       liveUrl: "https://techverse-1.onrender.com",
       description: "Techverse is a cutting-edge platform that brings together technology enthusiasts and professionals to share knowledge, collaborate on projects, and stay updated with the latest trends in the tech industry."
-    },
-    {
-      name: "Bookstore",
-      company: "Bookstore",
-      imgUrl: "/db.jpg",
-      liveUrl: "https://github.com/humphreyotieno1/Bookstore",
-      description: "Python-based application designed to simplify the management of books, authors, and courses in a library setting. It offers a user-friendly interface for librarians or administrators to perform various tasks such as adding new books, viewing existing books, deleting books, managing authors, and managing courses."
     },
   ];
 
@@ -59,7 +59,7 @@ export default function Portfolio() {
                   alt={project.name}
                   className="inline-block h-full w-full rounded-lg object-cover"
                 />
-                <div className="absolute bottom-5 left-5 flex flex-col justify-center rounded-lg bg-white px-8 py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-5 left-5 flex flex-col justify-center rounded-lg bg-blue-500 px-8 py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <p className="text-xs sm:text-xl">{project.name}</p>
                 </div>
               </a>

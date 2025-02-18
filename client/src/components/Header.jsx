@@ -11,7 +11,7 @@ import Achievements from './Achievements';
 import Contact from './Contact';
 import Footer from './Footer';
 
-export default () => {
+const Header = () => {
 
   const [state, setState] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -206,3 +206,4 @@ export default () => {
     </div>
   )
 }
+export default Header;

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-// import { FaDiscord, FaTwitter, FaInstagram, FaLinkedin, FaArrowUp } from 'react-icons/fa';
 import { faXTwitter, faGithub, faDiscord, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -26,14 +25,9 @@ const Footer = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // const scrollToTop = () => {
-  //   window.scrollTo({ top: 0, behavior: 'smooth' });
-  // };
-
   return (
     <footer className="text-white bg-gray-700 px-4 py-5 pb-2 pt-6 w-full font-sans">
       <div className="flex items-center justify-between">
-        {/* <img src="/humlogo.png" className="w-20 rounded-full" alt="Logo" /> */}
         <div className="max-w-lg sm:mx-auto sm:text-center">
           <div className="text-left">
             <p className="leading-relaxed mt-2 text-md">
@@ -72,17 +66,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="mt-4 sm:mt-0">
-          &copy; 2024. All rights reserved.
-        </div>
-      {/* <div className="flex justify-center mt-8">
-        <button
-          onClick={scrollToTop}
-          className="text-white hover:text-gray-400"
-          title="Click to go back to top"
-        >
-          <FontAwesomeIcon icon={faArrowUp} size="2x" />
-        </button>
-      </div> */}
+        &copy; 2025. All rights reserved.
+      </div>
     </footer>
   );
 };
