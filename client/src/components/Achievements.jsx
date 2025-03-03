@@ -74,8 +74,8 @@ export default function Achievements() {
     return (
         <section className="mt-12 mx-auto px-4 max-w-screen-xl md:px-8 font-sans" id="achievements">
             <div className="text-center">
-                <h1 className="text-2xl text-indigo-600 font-semibold">Achievements</h1>
-                <p className="mt-3 text-black text-lg justify-center text-center">
+                <h1 className="text-5xl text-indigo-600 font-semibold">Achievements</h1>
+                <p className="mt-3 dark:bg-gray-900 dark:text-gray-200 text-lg justify-center text-center">
                     Here are some of the achievements I have accomplished in my journey as a software developer.
                 </p>
             </div>
@@ -94,9 +94,9 @@ export default function Achievements() {
                                 onClick={() => openModal(achievement.img)}
                             />
                             <div className="pt-3 ml-4 mr-2 mb-3">
-                                <h3 className="text-xl text-black font-semibold">{achievement.title}</h3>
+                                <h3 className="text-xl dark:bg-gray-900 dark:text-gray-200 font-semibold">{achievement.title}</h3>
                                 <p
-                                    className={`text-black text-sm mt-1 ${
+                                    className={`dark:bg-gray-900 dark:text-gray-200 text-sm mt-1 ${
                                         expandedPosts[key] ? "h-auto" : "h-24"
                                     } overflow-hidden`}
                                 >

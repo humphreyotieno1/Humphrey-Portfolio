@@ -37,10 +37,10 @@ export default function Portfolio() {
       {/* Container */}
       <div className="mx-auto w-full max-w-7xl px-5 pt-4 pb-4 md:px-10 md:py-20 font-sans" id="portfolio">
         {/* Title */}
-        <h2 className="text-center text-2xl text-indigo-600 font-bold md:text-2xl">
+        <h2 className="text-center text-5xl text-indigo-600 font-bold md:text-5xl">
           My Projects
         </h2>
-        <p className="msm:text-base mb-8 mt-4 text-center text-lg text-black md:mb-12 lg:mb-16 justify-center items-center mx-auto max-w-xl space-y-3">
+        <p className="msm:text-base mb-8 mt-4 text-center text-lg dark:bg-gray-900 dark:text-gray-200 md:mb-12 lg:mb-16 justify-center items-center mx-auto max-w-xl space-y-3">
           Here are some of the projects I have worked on. Click on the images to view the live sites.
         </p>
         {/* Content */}
@@ -63,7 +63,7 @@ export default function Portfolio() {
                   <p className="text-xs sm:text-xl">{project.name}</p>
                 </div>
               </a>
-              <p className="text-lg text-black pb-8">{project.description}</p>
+              <p className="text-lg dark:bg-gray-900 dark:text-gray-200 pb-8">{project.description}</p>
             </div>
           ))}
         </div>

@@ -50,24 +50,24 @@ export default function About() {
   ]
 
   return (
-    <section className="py-14 font-sans justify-center items-center" id="about">
+    <section className="py-14 font-sans dark:bg-gray-900 dark:text-gray-200 justify-center items-center" id="about">
       <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
         <div className="max-w-xl space-y-3 justify-center mx-auto text-center">
-          <motion.h3 className="text-indigo-600 font-semibold text-2xl"
+          <motion.h3 className="text-indigo-600 font-semibold text-5xl"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             About Me
           </motion.h3>
-          <motion.p className="text-gray-800 text-3xl font-semibold sm:text-4xl"
+          <motion.p className="dark:bg-gray-900 dark:text-gray-200 text-3xl font-semibold sm:text-4xl"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             I'm a Full Stack Developer based in Nairobi, Kenya 🇰🇪
           </motion.p>
-          <motion.p className="text-lg text-black"
+          <motion.p className="text-lg dark:bg-gray-900 dark:text-gray-200"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -88,10 +88,10 @@ export default function About() {
                   <div className="w-12 h-12 border text-indigo-600 rounded-full flex items-center justify-center">
                     {item.icon}
                   </div>
-                  <h4 className="text-lg text-gray-800 font-semibold">
+                  <h4 className="text-lg dark:bg-gray-900 dark:text-gray-200 font-semibold">
                     {item.title}
                   </h4>
-                  <p>
+                  <p className="dark:bg-gray-900 dark:text-gray-200">
                     {item.desc}
                   </p>
                 </li>
@@ -118,8 +118,8 @@ export default function About() {
               transition={{ duration: 0.5 }}
             >
               <div className="text-4xl text-indigo-600">{logo.icon}</div>
-              <p className="mt-2 text-sm">{logo.label}</p>
-              <div className="text-lg font-bold mt-1">
+              <p className="mt-2 dark:bg-gray-900 dark:text-gray-200 text-sm">{logo.label}</p>
+              <div className="text-lg dark:bg-gray-900 dark:text-gray-200 font-bold mt-1">
                 {shouldCount ? (
                   <CountUp end={logo.proficiency} duration={5} suffix="%" />
                 ) : (

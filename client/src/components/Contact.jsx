@@ -82,15 +82,15 @@ const Contact = () => {
       <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
         <div className="max-w-lg mx-auto gap-12 justify-between lg:flex lg:max-w-none">
           <div className="max-w-lg space-y-3 lg:py-72">
-            <h3 className="text-indigo-600 font-semibold text-2xl">Contact Me</h3>
-            <p className="text-gray-800 text-3xl font-semibold sm:text-4xl">
+            <h3 className="text-indigo-600 font-semibold text-5xl">Contact Me</h3>
+            <p className="dark:bg-gray-900 dark:text-gray-200 text-3xl font-semibold sm:text-4xl">
               Get in Touch with Me
             </p>
-            <p>
+            <p className="dark:bg-gray-900 dark:text-gray-200">
               I am always open to new opportunities and collaborations. Feel free to reach out to me with any questions, comments, or project ideas you may have. I look forward to hearing from you!
             </p>
           </div>
-          <div className="flex-1 mt-12 sm:max-w-lg lg:max-w-md">
+          <div className="flex-1 mt-12 sm:max-w-lg lg:max-w-md dark:bg-gray-900 dark:text-gray-200">
             <form onSubmit={handleSubmit} className="space-y-5">
               {message.text && (
                 <div className={`p-4 rounded-lg ${message.type === 'error' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
@@ -178,7 +178,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full px-4 py-2 text-white font-medium bg-black hover:bg-blue-500 active:bg-indigo-600 rounded-lg duration-150"
+                className="w-full px-4 py-2 text-white font-medium dark:bg-gray-600 dark:hover:bg-gray-700 bg-black hover:bg-blue-500 active:bg-indigo-600 rounded-lg duration-150"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
