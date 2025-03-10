@@ -17,6 +17,13 @@ export default function Portfolio() {
       description: "A platform designed to connect, inspire, and support the community in their faith journey, providing a seamless user experience for visitors seeking information and engagement with the ministry."
     },
     {
+      name: "Cinephix",
+      company: "Cinephix",
+      imgUrl: "/cinephix.png",
+      liveUrl: "https://cinephix.vercel.app/",
+      description: "Cinephix is a movie streaming platform that offers a wide range of movies and TV shows, with a user-friendly interface for searching, watching, and sharing content."
+    },
+    {
       name: "Chrispin Oguna's Portfolio",
       company: "Chrispin Oguna",
       imgUrl: "/chris.png",
@@ -24,12 +31,19 @@ export default function Portfolio() {
       description: "A portfolio website for an ICT instructor, showcasing his skills, projects, and experiences in the tech industry. The platform aims to provide a comprehensive overview of his work and expertise to potential clients and employers."
     },
     {
-      name: "Techverse",
-      company: "Techverse",
-      imgUrl: "/data.jpg",
-      liveUrl: "https://techverse-1.onrender.com",
-      description: "Techverse is a cutting-edge platform that brings together technology enthusiasts and professionals to share knowledge, collaborate on projects, and stay updated with the latest trends in the tech industry."
-    },
+      name: "Victoria Phantom Spares",
+      company: "Victoria Phantom Spares",
+      imgUrl: "/victoria.png",
+      liveUrl: "https://victoriaphantoms.vercel.app/",
+      description: "An e-commerce platform for selling spare parts and accessories for Automobiles. The website offers a wide range of products, with a user-friendly interface for browsing, searching, and purchasing items."
+    }
+    // {
+    //   name: "Techverse",
+    //   company: "Techverse",
+    //   imgUrl: "/data.jpg",
+    //   liveUrl: "https://techverse-1.onrender.com",
+    //   description: "Techverse is a cutting-edge platform that brings together technology enthusiasts and professionals to share knowledge, collaborate on projects, and stay updated with the latest trends in the tech industry."
+    // },
   ];
 
   return (
