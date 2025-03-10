@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { FaPython, FaReact, FaNode, FaDatabase, FaJsSquare, FaHtml5, FaCss3 } from "react-icons/fa";
 import { SiTailwindcss, SiPostgresql, SiMysql, SiFlask } from "react-icons/si";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import CountUp from "react-countup";
+import AnimatedSection from "./AnimatedSection";
 
 export default function About() {
   const [shouldCount, setShouldCount] = useState(false);
@@ -52,39 +53,24 @@ export default function About() {
   return (
     <section className="py-14 font-sans dark:bg-gray-900 dark:text-gray-200 justify-center items-center" id="about">
       <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
-        <div className="max-w-xl space-y-3 justify-center mx-auto text-center">
-          <motion.h3 className="text-indigo-600 font-semibold text-5xl"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+        <AnimatedSection className="max-w-xl space-y-3 justify-center mx-auto text-center" delay={0.1}>
+          <h3 className="text-indigo-600 font-semibold text-5xl">
             About Me
-          </motion.h3>
-          <motion.p className="dark:bg-gray-900 dark:text-gray-200 text-3xl font-semibold sm:text-4xl"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          </h3>
+          <p className="dark:bg-gray-900 dark:text-gray-200 text-3xl font-semibold sm:text-4xl">
             I'm a Full Stack Developer based in Nairobi, Kenya 🇰🇪
-          </motion.p>
-          <motion.p className="text-lg dark:bg-gray-900 dark:text-gray-200"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          </p>
+          <p className="text-lg dark:bg-gray-900 dark:text-gray-200">
             I have a passion for building and crafting beautiful and functional websites and applications. I have experience working with a variety of technologies and frameworks, and I am always looking to learn and grow as a developer.
             I am familiar with both front-end and back-end technologies, and I am comfortable working with databases, APIs, and other tools to build robust and scalable applications.
-          </motion.p>
-        </div>
-        <motion.div className="mt-12 justify-center items-center"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
+          </p>
+        </AnimatedSection>
+        
+        <AnimatedSection className="mt-12 justify-center items-center" delay={0.3}>
           <ul className="grid gap-x-12 divide-y [&>.feature-1]:pl-0 sm:grid-cols-2 sm:gap-y-8 sm:divide-y-0 lg:divide-x lg:grid-cols-3 lg:gap-x-0 justify-center items-center">
             {
               features.map((item, idx) => (
-                <li key={idx} className={`feature-${idx + 1} space-y-3 py-8 lg:px-12 sm:py-0 items-center justify-center`}>
+                <AnimatedSection key={idx} className={`feature-${idx + 1} space-y-3 py-8 lg:px-12 sm:py-0 items-center justify-center`} delay={0.2 + (idx * 0.1)}>
                   <div className="w-12 h-12 border text-indigo-600 rounded-full flex items-center justify-center">
                     {item.icon}
                   </div>
@@ -94,41 +80,54 @@ export default function About() {
                   <p className="dark:bg-gray-900 dark:text-gray-200">
                     {item.desc}
                   </p>
-                </li>
+                </AnimatedSection>
               ))
             }
           </ul>
-        </motion.div>
+        </AnimatedSection>
 
         {/* logos */}
-        <motion.div className="mt-12 grid grid-cols-3 sm:grid-cols-6 gap-4 justify-center items-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+        <AnimatedSection 
+          className="mt-12 grid grid-cols-3 sm:grid-cols-6 gap-4 justify-center items-center"
+          delay={0.5}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { 
+              opacity: 1,
+              transition: { 
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+              }
+            }
+          }}
           onViewportEnter={() => setShouldCount(true)}
           onViewportLeave={() => setShouldCount(false)}
         >
           {logos.map((logo, idx) => (
-            <motion.div
+            <AnimatedSection
               key={idx}
               className="flex flex-col items-center justify-center text-center"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: { 
+                  opacity: 1, 
+                  scale: 1,
+                  transition: { duration: 0.5 }
+                }
+              }}
             >
               <div className="text-4xl text-indigo-600">{logo.icon}</div>
               <p className="mt-2 dark:bg-gray-900 dark:text-gray-200 text-sm">{logo.label}</p>
               <div className="text-lg dark:bg-gray-900 dark:text-gray-200 font-bold mt-1">
                 {shouldCount ? (
-                  <CountUp end={logo.proficiency} duration={5} suffix="%" />
+                  <CountUp end={logo.proficiency} duration={3} suffix="%" />
                 ) : (
                   "0%"
                 )}
               </div>
-            </motion.div>
+            </AnimatedSection>
           ))}
-        </motion.div>
+        </AnimatedSection>
       </div>
     </section>
   )

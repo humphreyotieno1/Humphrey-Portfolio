@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AnimatedSection from "./AnimatedSection";
 
 function ImageModal({ imgSrc, onClose }) {
     return (
@@ -73,26 +74,50 @@ export default function Achievements() {
 
     return (
         <section className="mt-12 mx-auto px-4 max-w-screen-xl md:px-8 font-sans" id="achievements">
-            <div className="text-center">
+            <AnimatedSection className="text-center" delay={0.1}>
                 <h1 className="text-5xl text-indigo-600 font-semibold">Achievements</h1>
                 <p className="mt-3 dark:bg-gray-900 dark:text-gray-200 text-lg justify-center text-center">
                     Here are some of the achievements I have accomplished in my journey as a software developer.
                 </p>
-            </div>
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            </AnimatedSection>
+            
+            <AnimatedSection 
+                className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+                delay={0.3}
+                variants={{
+                    hidden: { opacity: 0 },
+                    visible: { 
+                        opacity: 1,
+                        transition: { 
+                            staggerChildren: 0.15,
+                            delayChildren: 0.1
+                        }
+                    }
+                }}
+            >
                 {achievements.map((achievement, key) => (
-                    <article
-                        className="max-w-md mx-auto mt-4 shadow-lg border rounded-md duration-300 hover:shadow-sm"
+                    <AnimatedSection
                         key={key}
+                        className="max-w-md mx-auto mt-4 shadow-lg border rounded-md duration-300 hover:shadow-lg hover:scale-105 transition-all"
+                        variants={{
+                            hidden: { opacity: 0, y: 30 },
+                            visible: { 
+                                opacity: 1, 
+                                y: 0,
+                                transition: { duration: 0.5 }
+                            }
+                        }}
                     >
                         <div>
-                            <img
-                                src={achievement.img}
-                                loading="lazy"
-                                alt={achievement.title}
-                                className="w-full h-48 object-cover rounded-t-md cursor-pointer"
-                                onClick={() => openModal(achievement.img)}
-                            />
+                            <div className="overflow-hidden rounded-t-md">
+                                <img
+                                    src={achievement.img}
+                                    loading="lazy"
+                                    alt={achievement.title}
+                                    className="w-full h-48 object-cover cursor-pointer transition-transform duration-500 hover:scale-110"
+                                    onClick={() => openModal(achievement.img)}
+                                />
+                            </div>
                             <div className="pt-3 ml-4 mr-2 mb-3">
                                 <h3 className="text-xl dark:bg-gray-900 dark:text-gray-200 font-semibold">{achievement.title}</h3>
                                 <p
@@ -112,9 +137,9 @@ export default function Achievements() {
                                 </button> */}
                             </div>
                         </div>
-                    </article>
+                    </AnimatedSection>
                 ))}
-            </div>
+            </AnimatedSection>
             {modalImg && <ImageModal imgSrc={modalImg} onClose={closeModal} />}
         </section>
     );

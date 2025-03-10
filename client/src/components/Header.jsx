@@ -1,17 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import { faXTwitter, faGithub, faDiscord, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 library.add(faXTwitter, faGithub, faDiscord, faLinkedinIn, faArrowUp);
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import About from './About';
-import Services from './Services';
-import Portfolio from './Portfolio';
-import Achievements from './Achievements';
-import Contact from './Contact';
-import Footer from './Footer';
 import { Sun, Moon } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Spinner } from '@chakra-ui/react';
+
+// Lazy load components for better performance
+const About = lazy(() => import('./About'));
+const Services = lazy(() => import('./Services'));
+const Portfolio = lazy(() => import('./Portfolio'));
+const Achievements = lazy(() => import('./Achievements'));
+const Contact = lazy(() => import('./Contact'));
+const Footer = lazy(() => import('./Footer'));
 
 const Header = () => {
   const [state, setState] = useState(false);
@@ -103,21 +106,29 @@ const Header = () => {
     <div className="dark:bg-gray-900 dark:text-gray-200">
       <div className='relative font-sans font-bold py-4' id="home">
         {/* Arrow Up Button */}
-        {isVisible && (
-          <button
-            onClick={scrollToTop}
-            className="fixed bottom-5 right-5 p-3 rounded-full bg-gray-800 dark:bg-gray-700 text-white hover:bg-blue-700 shadow-lg transition-all"
-            title="Go to Top"
-          >
-            <FontAwesomeIcon icon={faArrowUp} size="lg" />
-          </button>
-        )}
+        <AnimatePresence>
+          {isVisible && (
+            <motion.button
+              onClick={scrollToTop}
+              className="fixed bottom-5 right-5 p-3 rounded-full bg-gray-800 dark:bg-gray-700 text-white hover:bg-blue-700 shadow-lg z-50"
+              title="Go to Top"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.5 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ duration: 0.3 }}
+            >
+              <FontAwesomeIcon icon={faArrowUp} size="lg" />
+            </motion.button>
+          )}
+        </AnimatePresence>
 
         <motion.div
           className='absolute inset-0 blur-xl h-[580px]'
           style={{ background: "linear-gradient(143.6deg, rgba(192, 132, 252, 0) 20.79%, rgba(232, 121, 249, 0.26) 40.92%, rgba(204, 171, 238, 0) 70.35%)" }}
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 5, repeat: Infinity }}
+          animate={{ y: [0, -10, 0], opacity: [0.7, 0.9, 0.7] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         ></motion.div>
         <div className='relative'>
           <header>
@@ -161,7 +172,7 @@ const Header = () => {
 
           <section>
             <div className="max-w-screen-xl mx-auto px-4 py-20 gap-60 text-gray-600 dark:text-gray-300 overflow-hidden md:px-8 md:flex">
-              <div className='flex-1 md:order-2 order-1'>
+              <div className='flex-1 md:order-2 order-1 mb-6'>
                 <img src="/humlogo.png" alt="logo" className="w-full h-auto md:h-[450px] object-cover rounded-full" />
               </div>
 
@@ -178,26 +189,28 @@ const Header = () => {
                   </p>
                 </a>
                 <motion.h1
-                  className="text-4xl text-gray-800 dark:text-gray-200 font-extrabold sm:text-5xl typewriter"
+                  className="text-4xl text-gray-800 dark:text-gray-200 font-extrabold sm:text-5xl"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1 }}
+                  transition={{ duration: 0.8 }}
+                  whileInView={{ scale: [1, 1.02, 1] }}
+                  viewport={{ once: true }}
                 >
                   Welcome to my Portfolio Website
                 </motion.h1>
                 <motion.h3
-                  className="text-2xl text-gray-700 dark:text-gray-300 typewriter"
+                  className="text-2xl text-gray-700 dark:text-gray-300"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.5 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
                 >
                   I am Humphrey Otieno
                 </motion.h3>
                 <motion.h4
-                  className="text-2xl text-gray-700 dark:text-gray-300 typewriter"
+                  className="text-2xl text-gray-700 dark:text-gray-300"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 1 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
                 >
                   Full-Stack Software Engineer
                 </motion.h4>
@@ -205,54 +218,140 @@ const Header = () => {
                   className="text-lg text-black dark:text-gray-300"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 1.5 }}
+                  transition={{ duration: 0.8, delay: 0.9 }}
                 >
                   Hello, I am Humphrey, a Full-Stack Software Developer currently on a journey of continuous learning and growth. Welcome to my portfolio!
                 </motion.p>
-                <div className='flex items-center gap-x-3 sm:text-sm'>
-                  <a href="https://www.canva.com/design/DAGGjSAQwM4/IewDoLplWB8uSfiZmioiyw/edit?utm_content=DAGGjSAQwM4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 dark:bg-gray-700 duration-150 hover:bg-blue-700 active:bg-gray-900 rounded-full md:inline-flex">
+                <motion.div 
+                  className='flex items-center gap-x-3 sm:text-sm'
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                >
+                  <motion.a 
+                    href="https://www.canva.com/design/DAGGjSAQwM4/IewDoLplWB8uSfiZmioiyw/edit?utm_content=DAGGjSAQwM4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" 
+                    className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 dark:bg-gray-700 hover:bg-blue-700 active:bg-gray-900 rounded-full md:inline-flex"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     Find CV
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                       <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
                     </svg>
-                  </a>
-                </div>
-                <div className="flex gap-x-4 mt-6">
-                  <a href="https://x.com/_Banta__" className="text-black-500 hover:text-gray-800 dark:hover:text-gray-400" target="_blank">
+                  </motion.a>
+                </motion.div>
+                <motion.div 
+                  className="flex gap-x-4 mt-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.5 }}
+                >
+                  <motion.a 
+                    href="https://x.com/_Banta__" 
+                    className="text-black-500 hover:text-gray-800 dark:hover:text-gray-400" 
+                    target="_blank"
+                    whileHover={{ scale: 1.2, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <FontAwesomeIcon icon={faXTwitter} className="size-8" />
-                  </a>
-                  <a href="https://github.com/humphreyotieno1" className="text-black-500 hover:text-gray-800 dark:hover:text-gray-400" target="_blank">
+                  </motion.a>
+                  <motion.a 
+                    href="https://github.com/humphreyotieno1" 
+                    className="text-black-500 hover:text-gray-800 dark:hover:text-gray-400" 
+                    target="_blank"
+                    whileHover={{ scale: 1.2, rotate: -5 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <FontAwesomeIcon icon={faGithub} className="size-8" />
-                  </a>
-                  <a href="https://discordapp.com/users/1150702066721890336" className="text-black-500 hover:text-gray-800 dark:hover:text-gray-400" target="_blank">
+                  </motion.a>
+                  <motion.a 
+                    href="https://discordapp.com/users/1150702066721890336" 
+                    className="text-black-500 hover:text-gray-800 dark:hover:text-gray-400" 
+                    target="_blank"
+                    whileHover={{ scale: 1.2, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <FontAwesomeIcon icon={faDiscord} className="size-8" />
-                  </a>
-                  <a href="https://www.linkedin.com/in/humphrey-otieno" className="text-black-500 hover:text-gray-800 dark:hover:text-gray-400" target="_blank">
+                  </motion.a>
+                  <motion.a 
+                    href="https://www.linkedin.com/in/humphrey-otieno" 
+                    className="text-black-500 hover:text-gray-800 dark:hover:text-gray-400" 
+                    target="_blank"
+                    whileHover={{ scale: 1.2, rotate: -5 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <FontAwesomeIcon icon={faLinkedinIn} className="size-8" />
-                  </a>
-                </div>
+                  </motion.a>
+                </motion.div>
               </div>
             </div>
           </section>
         </div>
       </div>
 
-      <hr className="w-64 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
-      <About className="moving-dots" />
+      <motion.hr 
+        className="w-64 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"
+        initial={{ width: 0 }}
+        whileInView={{ width: 256 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      />
+      <Suspense fallback={<div className="flex justify-center py-20"><Spinner size="xl" color="blue.500" /></div>}>
+        <About className="moving-dots" />
+      </Suspense>
 
-      <hr className="w-64 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
-      <Services />
+      <motion.hr 
+        className="w-64 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"
+        initial={{ width: 0 }}
+        whileInView={{ width: 256 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      />
+      <Suspense fallback={<div className="flex justify-center py-20"><Spinner size="xl" color="blue.500" /></div>}>
+        <Services />
+      </Suspense>
 
-      <hr className="w-64 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
-      <Portfolio />
+      <motion.hr 
+        className="w-64 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"
+        initial={{ width: 0 }}
+        whileInView={{ width: 256 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      />
+      <Suspense fallback={<div className="flex justify-center py-20"><Spinner size="xl" color="blue.500" /></div>}>
+        <Portfolio />
+      </Suspense>
 
-      <hr className="w-64 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
-      <Achievements />
+      <motion.hr 
+        className="w-64 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"
+        initial={{ width: 0 }}
+        whileInView={{ width: 256 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      />
+      <Suspense fallback={<div className="flex justify-center py-20"><Spinner size="xl" color="blue.500" /></div>}>
+        <Achievements />
+      </Suspense>
 
-      <hr className="w-64 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
-      <Contact />
+      <motion.hr 
+        className="w-64 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"
+        initial={{ width: 0 }}
+        whileInView={{ width: 256 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      />
+      <Suspense fallback={<div className="flex justify-center py-20"><Spinner size="xl" color="blue.500" /></div>}>
+        <Contact />
+      </Suspense>
 
-      <Footer />
+      <Suspense fallback={<div className="flex justify-center py-10"><Spinner size="md" color="blue.500" /></div>}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };

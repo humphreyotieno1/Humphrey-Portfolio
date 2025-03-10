@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AnimatedSection from './AnimatedSection';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -81,7 +82,18 @@ const Contact = () => {
     <main className="py-14 font-sans" id='contact'>
       <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
         <div className="max-w-lg mx-auto gap-12 justify-between lg:flex lg:max-w-none">
-          <div className="max-w-lg space-y-3 lg:py-72">
+          <AnimatedSection 
+            className="max-w-lg space-y-3 lg:py-72"
+            delay={0.1}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { 
+                opacity: 1, 
+                x: 0,
+                transition: { duration: 0.6 }
+              }
+            }}
+          >
             <h3 className="text-indigo-600 font-semibold text-5xl">Contact Me</h3>
             <p className="dark:bg-gray-900 dark:text-gray-200 text-3xl font-semibold sm:text-4xl">
               Get in Touch with Me
@@ -89,8 +101,20 @@ const Contact = () => {
             <p className="dark:bg-gray-900 dark:text-gray-200">
               I am always open to new opportunities and collaborations. Feel free to reach out to me with any questions, comments, or project ideas you may have. I look forward to hearing from you!
             </p>
-          </div>
-          <div className="flex-1 mt-12 sm:max-w-lg lg:max-w-md dark:bg-gray-900 dark:text-gray-200">
+          </AnimatedSection>
+          
+          <AnimatedSection 
+            className="flex-1 mt-12 sm:max-w-lg lg:max-w-md dark:bg-gray-900 dark:text-gray-200"
+            delay={0.3}
+            variants={{
+              hidden: { opacity: 0, x: 50 },
+              visible: { 
+                opacity: 1, 
+                x: 0,
+                transition: { duration: 0.6 }
+              }
+            }}
+          >
             <form onSubmit={handleSubmit} className="space-y-5">
               {message.text && (
                 <div className={`p-4 rounded-lg ${message.type === 'error' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
@@ -184,7 +208,7 @@ const Contact = () => {
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
-          </div>
+          </AnimatedSection>
         </div>
       </div>
     </main>

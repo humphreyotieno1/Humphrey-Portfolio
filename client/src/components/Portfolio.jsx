@@ -1,4 +1,5 @@
 import React from "react";
+import AnimatedSection from "./AnimatedSection";
 
 export default function Portfolio() {
   const projects = [
@@ -51,36 +52,63 @@ export default function Portfolio() {
       {/* Container */}
       <div className="mx-auto w-full max-w-7xl px-5 pt-4 pb-4 md:px-10 md:py-20 font-sans" id="portfolio">
         {/* Title */}
-        <h2 className="text-center text-5xl text-indigo-600 font-bold md:text-5xl">
-          My Projects
-        </h2>
-        <p className="msm:text-base mb-8 mt-4 text-center text-lg dark:bg-gray-900 dark:text-gray-200 md:mb-12 lg:mb-16 justify-center items-center mx-auto max-w-xl space-y-3">
-          Here are some of the projects I have worked on. Click on the images to view the live sites.
-        </p>
+        <AnimatedSection className="text-center" delay={0.1}>
+          <h2 className="text-center text-5xl text-indigo-600 font-bold md:text-5xl">
+            My Projects
+          </h2>
+          <p className="msm:text-base mb-8 mt-4 text-center text-lg dark:bg-gray-900 dark:text-gray-200 md:mb-12 lg:mb-16 justify-center items-center mx-auto max-w-xl space-y-3">
+            Here are some of the projects I have worked on. Click on the images to view the live sites.
+          </p>
+        </AnimatedSection>
+        
         {/* Content */}
-        <div className="mx-auto grid justify-items-stretch gap-4 md:grid-cols-2 lg:grid-cols-2 lg:gap-10">
+        <AnimatedSection 
+          className="mx-auto grid justify-items-stretch gap-4 md:grid-cols-2 lg:grid-cols-2 lg:gap-10"
+          delay={0.3}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { 
+              opacity: 1,
+              transition: { 
+                staggerChildren: 0.2,
+                delayChildren: 0.1
+              }
+            }
+          }}
+        >
           {/* Dynamically render projects */}
           {projects.map((project, key) => (
-            <div key={key} className="space-y-4">
+            <AnimatedSection 
+              key={key} 
+              className="space-y-4"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { 
+                  opacity: 1, 
+                  y: 0,
+                  transition: { duration: 0.6 }
+                }
+              }}
+            >
               <a
                 href={project.liveUrl}
-                className="relative flex h-[300px] items-end group"
+                className="relative flex h-[300px] items-end group overflow-hidden rounded-lg"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img
                   src={project.imgUrl}
                   alt={project.name}
-                  className="inline-block h-full w-full rounded-lg object-cover"
+                  className="inline-block h-full w-full rounded-lg object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute bottom-5 left-5 flex flex-col justify-center rounded-lg bg-blue-500 px-8 py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-xs sm:text-xl">{project.name}</p>
+                <div className="absolute bottom-5 left-5 flex flex-col justify-center rounded-lg bg-blue-500 px-8 py-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-y-0 translate-y-4">
+                  <p className="text-xs sm:text-xl text-white font-bold">{project.name}</p>
                 </div>
               </a>
               <p className="text-lg dark:bg-gray-900 dark:text-gray-200 pb-8">{project.description}</p>
-            </div>
+            </AnimatedSection>
           ))}
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );
