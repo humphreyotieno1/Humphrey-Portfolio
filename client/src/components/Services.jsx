@@ -7,17 +7,17 @@ export default function Services() {
     {
       title: "Full Stack Web Development",
       desc: "My passion lies in creating dynamic and interactive web applications that provide seamless and engaging digital experiences, enhancing user interaction and satisfaction. ",
-      img: "/webapp.jpg",
+      img: "/fullstack.jpg",
     },
     {
       title: "Database and API Design",
       desc: "I have experience working with databases and APIs to create robust and scalable applications. I can help you design and implement databases and APIs that meet your specific needs.",
-      img: "/db.jpg",
+      img: "/database.jpg",
     },
     {
       title: "Web Design",
       desc: "I specialise in creating visually appealing and user-friendly websites that are designed to engage and captivate users, while also providing a seamless and intuitive user experience.",
-      img: "/web.jpg",
+      img: "/webdesign.jpg",
     },
   ]
 

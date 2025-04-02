@@ -173,7 +173,7 @@ const Header = () => {
           <section>
             <div className="max-w-screen-xl mx-auto px-4 py-20 gap-60 text-gray-600 dark:text-gray-300 overflow-hidden md:px-8 md:flex">
               <div className='flex-1 md:order-2 order-1 mb-6'>
-                <img src="/humlogo.png" alt="logo" className="w-full h-auto md:h-[450px] object-cover rounded-full" />
+                <img src="/hum.png" alt="logo" className="w-full h-auto md:h-[450px] object-cover rounded-full" />
               </div>
 
               <div className='flex-none space-y-5 max-w-xl'>

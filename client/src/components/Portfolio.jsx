@@ -11,6 +11,13 @@ export default function Portfolio() {
       description: "LegalizeMe is a legal services web application designed to simplify the process of accessing legal assistance and services. The platform aims to connect individuals and businesses with legal professionals, providing a seamless and efficient way to address their legal needs."
     },
     {
+      name: "W.G.Gitau and Associates",
+      company: "W.G.Gitau and Associates",
+      imgUrl: "/wg.png",
+      liveUrl: "https://www.wggitau.co.ke/",
+      description: "W.G Gitau & Associates (W.G.G) is an independent Accounting and Audit Consulting firm based in Kenya that is registered with ICPAK as a practising Certified Public Accountants."
+    },
+    {
       name: "Kingdom Call",
       company: "Kingdom Call",
       imgUrl: "/kingdom.png",
