@@ -229,11 +229,12 @@ const Header = () => {
                   transition={{ duration: 0.8, delay: 1.2 }}
                 >
                   <motion.a 
-                    href="https://www.canva.com/design/DAGGjSAQwM4/IewDoLplWB8uSfiZmioiyw/edit?utm_content=DAGGjSAQwM4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" 
+                    href="/resume.pdf"
                     className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 dark:bg-gray-700 hover:bg-blue-700 active:bg-gray-900 rounded-full md:inline-flex"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ duration: 0.2 }}
+                    target="_blank"
                   >
                     Find CV
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">

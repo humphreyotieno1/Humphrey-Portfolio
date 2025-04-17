@@ -18,6 +18,13 @@ export default function Portfolio() {
       description: "W.G Gitau & Associates (W.G.G) is an independent Accounting and Audit Consulting firm based in Kenya that is registered with ICPAK as a practising Certified Public Accountants."
     },
     {
+      name: "Pisafa Gifts Shop",
+      company: "Pisafa Gifts Shop",
+      imgUrl: "/pisafa.png",
+      liveUrl: "https://www.pisafagiftshop.com/",
+      description: "An e-commerce platform that specializes in personalized gifts and custom products, providing a seamless shopping experience for customers looking for unique and meaningful gifts."
+    },
+    {
       name: "Kingdom Call",
       company: "Kingdom Call",
       imgUrl: "/kingdom.png",
@@ -38,13 +45,6 @@ export default function Portfolio() {
       liveUrl: "https://chrispinoguna.vercel.app/",
       description: "A portfolio website for an ICT instructor, showcasing his skills, projects, and experiences in the tech industry. The platform aims to provide a comprehensive overview of his work and expertise to potential clients and employers."
     },
-    {
-      name: "Victoria Phantom Spares",
-      company: "Victoria Phantom Spares",
-      imgUrl: "/victoria.png",
-      liveUrl: "https://victoriaphantoms.vercel.app/",
-      description: "An e-commerce platform for selling spare parts and accessories for Automobiles. The website offers a wide range of products, with a user-friendly interface for browsing, searching, and purchasing items."
-    }
     // {
     //   name: "Techverse",
     //   company: "Techverse",
