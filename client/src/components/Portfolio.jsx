@@ -18,11 +18,25 @@ export default function Portfolio() {
       description: "W.G Gitau & Associates (W.G.G) is an independent Accounting and Audit Consulting firm based in Kenya that is registered with ICPAK as a practising Certified Public Accountants."
     },
     {
+      name: "Chrispin Oguna's Portfolio",
+      company: "Chrispin Oguna",
+      imgUrl: "/chris.png",
+      liveUrl: "https://chrispinoguna.vercel.app/",
+      description: "A portfolio website for an ICT instructor, showcasing his skills, projects, and experiences in the tech industry. The platform aims to provide a comprehensive overview of his work and expertise to potential clients and employers."
+    },
+    {
       name: "Pisafa Gifts Shop",
       company: "Pisafa Gifts Shop",
       imgUrl: "/pisafa.png",
       liveUrl: "https://www.pisafagiftshop.com/",
       description: "An e-commerce platform that specializes in personalized gifts and custom products, providing a seamless shopping experience for customers looking for unique and meaningful gifts."
+    },
+    {
+      name: "Byron Otieno Portfolio",
+      company: "Byron Otieno",
+      imgUrl: "/byron.png",
+      liveUrl: "https://byronotieno.vercel.app/",
+      description: "A personal portfolio website built for Byron Otieno, an EcoTourism Manager, showcasing his passion for sustainable tourism and environmental conservation. The site highlights his professional profile, skills in team-building and project management, and dedication to impactful eco-friendly initiatives."
     },
     {
       name: "Kingdom Call",
@@ -37,13 +51,6 @@ export default function Portfolio() {
       imgUrl: "/cinephix.png",
       liveUrl: "https://cinephix.vercel.app/",
       description: "Cinephix is a movie streaming platform that offers a wide range of movies and TV shows, with a user-friendly interface for searching, watching, and sharing content."
-    },
-    {
-      name: "Chrispin Oguna's Portfolio",
-      company: "Chrispin Oguna",
-      imgUrl: "/chris.png",
-      liveUrl: "https://chrispinoguna.vercel.app/",
-      description: "A portfolio website for an ICT instructor, showcasing his skills, projects, and experiences in the tech industry. The platform aims to provide a comprehensive overview of his work and expertise to potential clients and employers."
     },
     // {
     //   name: "Techverse",
