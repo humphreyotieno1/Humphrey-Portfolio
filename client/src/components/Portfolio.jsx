@@ -11,6 +11,14 @@ export default function Portfolio() {
       description: "LegalizeMe is a legal services web application designed to simplify the process of accessing legal assistance and services. The platform aims to connect individuals and businesses with legal professionals, providing a seamless and efficient way to address their legal needs."
     },
     {
+      name: "Maxon Computers ECommerce",
+      company: "Maxon Computers",
+      imgUrl: "/maxon.png",
+      liveUrl: "https://www.maxoncomputers.co.ke/",
+      description: "Discover the latest in technology with Maxon's premium selection of computers, laptops, and accessories."
+    },
+    
+    {
       name: "W.G.Gitau and Associates",
       company: "W.G.Gitau and Associates",
       imgUrl: "/wg.png",
@@ -23,6 +31,13 @@ export default function Portfolio() {
       imgUrl: "/chris.png",
       liveUrl: "https://chrispinoguna.vercel.app/",
       description: "A portfolio website for an ICT instructor, showcasing his skills, projects, and experiences in the tech industry. The platform aims to provide a comprehensive overview of his work and expertise to potential clients and employers."
+    },
+    {
+      name: "Mary M'Mukindia's Portfolio",
+      company: "Mary M'Mukindia",
+      imgUrl: "/mary.png",
+      liveUrl: "https://mary-mmukindia-coaching.vercel.app/",
+      description: "Mary M'Mukindia is a catalyst for leadership transformation. She believes in the power of clarity, conviction, and bold leadership to create lasting impact in business and society."
     },
     {
       name: "Pisafa Gifts Shop",
