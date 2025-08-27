@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0A192F;
+  --color-primary-light: #112240;
+  --color-primary-lighter: #233554;
+  --color-accent: #64FFDA;
+  --color-accent-dark: #4ECDC4;
+  --color-text-primary: #CCD6F6;
+  --color-text-secondary: #8892B0;
+  --color-text-muted: #8892B0;
+  --color-border: #64FFDA;
+  --color-border-muted: #233554;
+  
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-mono: Fira Code, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-primary text-text-primary font-sans;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 border border-accent text-accent rounded-md hover:bg-accent/10 transition-all duration-300 font-medium;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-accent/10 border border-accent text-accent rounded-md hover:bg-accent/20 transition-all duration-300 font-medium;
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-6xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent to-accent-dark bg-clip-text text-transparent;
+  }
+}
