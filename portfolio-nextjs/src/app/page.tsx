@@ -13,6 +13,7 @@ import PerformanceBenchmark from '@/components/PerformanceBenchmark'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Loader from '@/components/Loader'
+import BackToTop from '@/components/BackToTop'
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
@@ -34,14 +35,15 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
+      <LanguageStack />
+      <Services />
       <Experience />
       <Work />
-      <Services />
-      <LanguageStack />
       <Certifications />
       <PerformanceBenchmark />
       <Contact />
       <Footer />
+      <BackToTop />
     </main>
   )
 }

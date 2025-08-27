@@ -31,9 +31,9 @@ const About = () => {
 
   const skills = [
     { name: 'Frontend Development', icon: Globe, description: 'React, Next.js, TypeScript, Tailwind CSS' },
-    { name: 'Backend Development', icon: Code, description: 'Node.js, Python, PostgreSQL, MongoDB' },
-    { name: 'Performance Optimization', icon: Zap, description: 'Web Vitals, Bundle optimization, Caching' },
-    { name: 'Team Collaboration', icon: Users, description: 'Git, Agile, Code reviews, Mentoring' },
+    { name: 'Backend Development', icon: Code, description: 'Node.js, Python, PostgreSQL, MongoDB, Django, FastAPI, Flask' },
+    { name: 'Performance Optimization and Devops', icon: Zap, description: 'Web Vitals, Bundle optimization, Caching, Docker, Kubernetes, CI/CD' },
+    { name: 'Team Collaboration', icon: Users, description: 'Git, Agile, Code reviews, Mentoring, Slack, Discord' },
   ]
 
   return (
@@ -61,17 +61,16 @@ const About = () => {
               </p>
               
               <p>
-                My journey in web development started back in 2018 when I decided to try editing custom 
-                Tumblr themes — turns out hacking together a custom reblog button taught me a lot about 
+                My journey in web development started back in 2022 and my experience spans working with a variety of clients, frameworks and technologies — turns out hacking together a custom reblog button taught me a lot about 
                 HTML &amp; CSS!
               </p>
               
               <p>
-                Fast-forward to today, and I&apos;ve had the privilege of building software for an{' '}
-                <span className="text-accent">advertising agency</span>, a{' '}
-                <span className="text-accent">startup</span>, a{' '}
-                <span className="text-accent">huge corporation</span>, and a{' '}
-                <span className="text-accent">student-led design studio</span>.
+                Fast-forward to today, and I&apos;ve had the privilege of building software for{' '}
+                <span className="text-accent">ecommerce stores</span>,{' '}
+                <span className="text-accent">a startups</span>,{' '}
+                <span className="text-accent">legal firms</span>, and{' '}
+                <span className="text-accent"> a travel agency</span>.
               </p>
               
               <p>

@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { Mail, MessageSquare, Send, Github, Linkedin, Twitter } from 'lucide-react'
+import { Mail, MessageSquare, Send, Github, Linkedin, Twitter, Globe } from 'lucide-react'
+import { FaDiscord } from 'react-icons/fa'
 
 const Contact = () => {
   const ref = useRef(null)
@@ -27,6 +28,11 @@ const Contact = () => {
 
     if (!firstName || !lastName || !email || !msg) {
       setMessage({ type: 'error', text: 'All required fields must be filled out.' })
+      return
+    }
+
+    if (msg.length < 10) {
+      setMessage({ type: 'error', text: 'Message must be at least 10 characters long.' })
       return
     }
 
@@ -110,10 +116,13 @@ const Contact = () => {
   }
 
   const socialLinks = [
-    { name: 'GitHub', icon: Github, href: 'https://github.com/humphrey', color: 'hover:text-accent' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/in/humphrey', color: 'hover:text-accent' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/humphrey', color: 'hover:text-accent' },
+    { name: 'GitHub', icon: Github, href: 'https://github.com/humphreyotieno1', color: 'hover:text-accent' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/humphrey-otieno', color: 'hover:text-accent' },
+    { name: 'Twitter', icon: Twitter, href: 'https://x.com/_Banta__', color: 'hover:text-accent' },
+    { name: 'Portfolio', icon: Globe, href: 'https://humphrey.dev', color: 'hover:text-accent' },
+    { name: 'Server', icon: FaDiscord, href: 'https://discordapp.com/users/1150702066721890336', color: 'hover:text-accent' },
   ]
+
 
   return (
     <section id="contact" ref={ref} className="section-padding">
@@ -130,7 +139,8 @@ const Contact = () => {
               Get In Touch
             </h2>
             <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-              I&apos;m currently looking for new opportunities. Whether you have a question or just want to say hi, 
+              I&apos;m always open to new opportunities. Whether you have a question or just want to say hi, feel free to reach out!
+              <br />
               I&apos;ll try my best to get back to you!
             </p>
           </motion.div>
@@ -226,6 +236,7 @@ const Contact = () => {
                   />
                 </div>
                 
+                {/* BE MORE THAN 10 CHARS */}
                 <div>
                   <label htmlFor="message" className="block text-text-primary font-medium mb-2">
                     Message *
@@ -315,7 +326,7 @@ const Contact = () => {
                     Current Status
                   </h4>
                   <p className="text-text-secondary leading-relaxed">
-                    I&apos;m currently open to new opportunities, including full-time positions and interesting projects. 
+                    I&apos;m to new opportunities, including full-time positions and interesting projects. 
                     Feel free to reach out if you&apos;d like to discuss potential collaborations.
                   </p>
                 </div>
@@ -328,10 +339,10 @@ const Contact = () => {
                     Email is the best way to reach me. I typically respond within 24 hours during weekdays.
                   </p>
                   <a
-                    href="mailto:hello@humphrey.dev"
+                    href="mailto:humphreyotieno04@gmail.com"
                     className="text-accent hover:text-accent-dark transition-colors duration-300 font-medium"
                   >
-                    hello@humphrey.dev
+                    humphreyotieno04@gmail.com
                   </a>
                 </div>
                 

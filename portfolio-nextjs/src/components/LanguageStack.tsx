@@ -4,14 +4,15 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState, useEffect, useMemo } from 'react'
 import { 
-  FaPython, FaReact, FaNode, FaDatabase, FaJsSquare, FaHtml5, FaCss3
+  FaPython, FaReact, FaNode, FaDatabase, FaJsSquare, FaHtml5, FaCss3,
 } from 'react-icons/fa'
-import { SiTailwindcss, SiPostgresql, SiMysql, SiFlask, SiTypescript } from 'react-icons/si'
+import { SiNextdotjs, SiTailwindcss, SiPostgresql, SiMysql, SiFlask, SiTypescript, SiDjango, SiFastapi, SiDocker, SiGit } from 'react-icons/si'
 
 const LanguageStack = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const [counts, setCounts] = useState({
+    nextjs: 0,
     html: 0,
     css: 0,
     javascript: 0,
@@ -22,10 +23,15 @@ const LanguageStack = () => {
     database: 0,
     mysql: 0,
     postgresql: 0,
-    tailwind: 0
+    tailwind: 0,
+    django: 0,
+    fastapi: 0,
+    docker: 0,
+    git: 0
   })
 
   const languages = useMemo(() => [
+    { icon: SiNextdotjs, label: "NextJS", proficiency: 85, color: "text-blue-500" },
     { icon: FaHtml5, label: "HTML5", proficiency: 95, color: "text-orange-500" },
     { icon: FaCss3, label: "CSS3", proficiency: 90, color: "text-blue-500" },
     { icon: FaJsSquare, label: "JavaScript", proficiency: 80, color: "text-yellow-400" },
@@ -37,26 +43,31 @@ const LanguageStack = () => {
     { icon: FaDatabase, label: "Database", proficiency: 85, color: "text-purple-500" },
     { icon: SiMysql, label: "MySQL", proficiency: 85, color: "text-orange-600" },
     { icon: SiPostgresql, label: "PostgreSQL", proficiency: 85, color: "text-blue-700" },
-    { icon: SiTailwindcss, label: "TailwindCSS", proficiency: 90, color: "text-cyan-500" }
+    { icon: SiTailwindcss, label: "TailwindCSS", proficiency: 90, color: "text-cyan-500" },
+    { icon: SiDjango, label: "Django", proficiency: 85, color: "text-blue-500" },
+    { icon: SiFastapi, label: "FastAPI", proficiency: 85, color: "text-blue-500" },
+    { icon: SiDocker, label: "Docker", proficiency: 85, color: "text-blue-500" },
+    { icon: SiGit, label: "Git", proficiency: 85, color: "text-blue-500" },
   ], [])
 
   useEffect(() => {
     if (isInView) {
       const timer = setTimeout(() => {
-        languages.forEach((lang) => {
-          const key = lang.label.toLowerCase().replace(/\s+/g, '')
-          if (key in counts) {
-            setCounts(prev => ({
-              ...prev,
-              [key]: lang.proficiency
-            }))
-          }
-        })
-      }, 500)
+        setCounts(prevCounts => {
+          const newCounts = { ...prevCounts };
+          languages.forEach((lang) => {
+            const key = lang.label.toLowerCase().replace(/\s+/g, '');
+            if (key in newCounts) {
+              newCounts[key as keyof typeof newCounts] = lang.proficiency;
+            }
+          });
+          return newCounts;
+        });
+      }, 500);
 
-      return () => clearTimeout(timer)
+      return () => clearTimeout(timer);
     }
-  }, [isInView, counts, languages])
+  }, [isInView, languages])
 
   const containerVariants = {
     hidden: { opacity: 0 },

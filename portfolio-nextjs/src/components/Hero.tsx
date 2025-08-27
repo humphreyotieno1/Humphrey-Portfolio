@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight, Download, Github, Linkedin, Twitter, Globe, BookOpen } from 'lucide-react'
+import { FaDiscord} from 'react-icons/fa'
 import Typewriter from './Typewriter'
 
 const Hero = () => {
@@ -39,15 +40,17 @@ const Hero = () => {
   }
 
   const socialLinks = [
-    { name: 'GitHub', icon: Github, href: 'https://github.com/humphrey', color: 'hover:text-accent' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/in/humphrey', color: 'hover:text-accent' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/humphrey', color: 'hover:text-accent' },
+    { name: 'GitHub', icon: Github, href: 'https://github.com/humphreyotieno1', color: 'hover:text-accent' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/humphrey-otieno', color: 'hover:text-accent' },
+    { name: 'Twitter', icon: Twitter, href: 'https://x.com/_Banta__', color: 'hover:text-accent' },
     { name: 'Portfolio', icon: Globe, href: 'https://humphrey.dev', color: 'hover:text-accent' },
+    { name: 'Server', icon: FaDiscord, href: 'https://discordapp.com/users/1150702066721890336', color: 'hover:text-accent' },
   ]
 
+
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center pt-16">
-      <div className="container-custom px-4 sm:px-6 lg:px-8">
+    <section id="hero" className="min-h-screen flex items-center justify-center pt-20">
+      <div className="container-custom px-4 sm:px-6 lg:px-12 mt-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <motion.div
@@ -75,7 +78,7 @@ const Hero = () => {
               className="text-4xl sm:text-6xl lg:text-7xl font-bold text-text-primary mb-6 leading-tight"
             >
               <Typewriter 
-                text="Humphrey." 
+                text="Humphrey Otieno." 
                 speed={150} 
                 delay={800}
                 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-text-primary"
@@ -85,14 +88,15 @@ const Hero = () => {
             {/* Tagline */}
             <motion.h2
               variants={itemVariants}
-              className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-text-secondary mb-8 leading-tight"
+              className="text-2xl sm:text-4xl lg:text-5xl font-semibold text-text-secondary mb-8 leading-tight"
             >
-              <Typewriter 
+              {/* <Typewriter 
                 text="I build things for the web." 
                 speed={80} 
                 delay={2000}
                 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-text-secondary"
-              />
+              /> */}
+              Software Engineer
             </motion.h2>
 
             {/* Description */}
@@ -100,11 +104,13 @@ const Hero = () => {
               variants={itemVariants}
               className="text-lg sm:text-xl text-text-secondary max-w-2xl mb-12 leading-relaxed"
             >
-              I&apos;m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I&apos;m focused on building accessible, human-centered products at{' '}
+              I&apos;m a Fullstack Software Engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I&apos;m focused on building accessible, human-centered products with{' '}
               <span className="text-accent hover:text-accent-dark transition-colors duration-300 cursor-pointer">
-                Upstatement
+                Customer Satisfaction
               </span>
               .
+              <br />
+              <span className="text-accent hover:text-accent-dark transition-colors duration-300 cursor-pointer">Welcome to my Portfolio.</span>
             </motion.p>
 
             {/* Call to Action */}
@@ -130,6 +136,7 @@ const Hero = () => {
                 whileHover="hover"
                 variants={buttonVariants}
                 className="btn-secondary group flex items-center justify-center gap-2"
+                target="_blank"
               >
                 <Download size={20} />
                 Download Resume
@@ -158,14 +165,18 @@ const Hero = () => {
             </motion.div>
 
             {/* Blog Badge */}
-            <motion.div
+            <motion.a
+              href="https://dev.to/banta"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover="hover"
               variants={buttonVariants}
               className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent hover:bg-accent/20 transition-all duration-300 cursor-pointer group"
             >
               <BookOpen size={16} />
               <span className="text-sm font-medium">View Blog Posts</span>
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
-            </motion.div>
+            </motion.a>
           </motion.div>
 
           {/* Right Column - Profile Image */}
@@ -183,7 +194,14 @@ const Hero = () => {
                 className="w-80 h-80 rounded-full overflow-hidden border-4 border-accent/20"
               >
                 <div className="w-full h-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
-                  <span className="text-accent/60 text-lg font-mono">Profile Image</span>
+                  {/* <span className="text-accent/60 text-lg font-mono">Profile Image</span> */}
+                  <motion.img
+                    src="/hum.png"
+                    alt="Profile Image"
+                    width={320}
+                    height={320}
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
               </motion.div>
               

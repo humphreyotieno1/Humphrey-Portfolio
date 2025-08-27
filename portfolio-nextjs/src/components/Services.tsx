@@ -84,7 +84,12 @@ const Services = () => {
                 {/* Service Image */}
                 <div className="relative h-48 overflow-hidden">
                   <div className="w-full h-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
-                    <span className="text-accent/60 text-lg font-mono">Service Preview</span>
+                    {/* <span className="text-accent/60 text-lg font-mono">Service Preview</span> */}
+                    <motion.img 
+                      src={service.image}
+                      alt={service.title}
+                      className="object-cover"
+                    />
                   </div>
                   
                   {/* Icon Overlay */}
@@ -117,13 +122,13 @@ const Services = () => {
                   </div>
                   
                   {/* Learn More Button */}
-                  <motion.button
+                  {/* <motion.button
                     whileHover={{ x: 5 }}
                     className="flex items-center gap-2 text-accent hover:text-accent-dark transition-colors duration-300 text-sm font-medium group/btn"
                   >
                     Learn More
                     <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform duration-300" />
-                  </motion.button>
+                  </motion.button> */}
                 </div>
               </motion.div>
             ))}

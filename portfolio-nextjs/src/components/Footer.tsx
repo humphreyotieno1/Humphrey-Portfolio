@@ -2,13 +2,15 @@
 
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Twitter, Mail, Heart } from 'lucide-react'
+import { FaDiscord } from 'react-icons/fa'
 
 const Footer = () => {
   const socialLinks = [
-    { name: 'GitHub', icon: Github, href: 'https://github.com/humphrey' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/in/humphrey' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/humphrey' },
-    { name: 'Email', icon: Mail, href: 'mailto:hello@humphrey.dev' },
+    { name: 'GitHub', icon: Github, href: 'https://github.com/humphreyotieno1' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/in/humphrey-otieno' },
+    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/_Banta__' },
+    { name: 'Discord', icon: FaDiscord, href: 'https://discordapp.com/users/1150702066721890336' },
+    { name: 'Email', icon: Mail, href: 'mailto:humphreyotieno04@gmail.com' },
   ]
 
   const containerVariants = {

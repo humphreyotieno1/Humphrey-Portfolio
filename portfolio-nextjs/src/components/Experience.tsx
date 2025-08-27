@@ -11,41 +11,23 @@ const Experience = () => {
 
   const experiences = [
     {
-      company: 'Upstatement',
-      position: 'Senior Software Engineer',
-      duration: '2022 - Present',
-      location: 'Boston, MA',
-      description: 'Building accessible, human-centered products for clients ranging from startups to Fortune 500 companies. Leading development of React applications and mentoring junior developers.',
-      technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL'],
-      link: 'https://upstatement.com'
+      company: 'Eros Africa DMC Limited',
+      position: 'Web Developer',
+      duration: 'July 2025- Present',
+      location: 'Nairobi, Kenya',
+      description: 'Recently joined Eros Africa Ltd as a Software Developer Intern, where I’m gaining hands-on experience in full-stack development and contributing to real-world projects that drive innovation and digital transformation across Africa. I am Building and maintaining responsive web applications, Developing and integrating RESTful APIs to connect backend services with user interfaces, Working in Agile sprints, participating in daily standups, and collaborating, Writing clean, testable code and fixing bugs across the stack.',
+      technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker', 'FastAPI', 'CRM', 'Python'],
+      link: 'https://www.erosafrica.com/'
     },
     {
-      company: 'TechCorp',
-      position: 'Full Stack Developer',
-      duration: '2020 - 2022',
-      location: 'San Francisco, CA',
-      description: 'Developed and maintained multiple web applications using modern technologies. Collaborated with cross-functional teams to deliver high-quality software solutions.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'AWS', 'Docker'],
-      link: '#'
+      company: 'LegalizeMe',
+      position: 'Front End Web Developer',
+      duration: 'September 2024 - February 2025',
+      location: 'Eldoret, Kenya',
+      description: 'Frontend Web Developer at LegalizeMe, a startup dedicated to providing accessible law resources through a user-friendly website. Focused on building responsive interfaces and delivering seamless digital experiences.',
+      technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Django', 'AWS', 'Tailwind CSS', 'Framer Motion'],
+      link: 'https://www.legalizeme.site/'
     },
-    {
-      company: 'StartupXYZ',
-      position: 'Frontend Developer',
-      duration: '2019 - 2020',
-      location: 'New York, NY',
-      description: 'Built responsive user interfaces and implemented modern web technologies. Worked closely with designers to create intuitive user experiences.',
-      technologies: ['React', 'Redux', 'Sass', 'Webpack', 'Jest'],
-      link: '#'
-    },
-    {
-      company: 'Design Studio',
-      position: 'Web Developer Intern',
-      duration: '2018 - 2019',
-      location: 'Los Angeles, CA',
-      description: 'Assisted in developing websites for various clients. Learned modern web development practices and responsive design principles.',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'WordPress', 'Photoshop'],
-      link: '#'
-    }
   ]
 
   const containerVariants = {

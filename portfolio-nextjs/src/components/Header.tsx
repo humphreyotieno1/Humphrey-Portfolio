@@ -1,13 +1,14 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import ThemeToggle from './ThemeToggle'
+// import ThemeToggle from './ThemeToggle'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const mobileMenuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,11 +18,42 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node) && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMobileMenuOpen])
+
+  // Close mobile menu and scroll to section
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    setIsMobileMenuOpen(false)
+    
+    // Wait for the menu to close before scrolling
+    setTimeout(() => {
+      const targetId = href.substring(1)
+      const targetElement = document.getElementById(targetId)
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, 100)
+  }
+
   const navItems = [
     { label: '01. About', href: '#about' },
-    { label: '02. Experience', href: '#experience' },
-    { label: '03. Work', href: '#work' },
-    { label: '04. Contact', href: '#contact' },
+    { label: '02. Services', href: '#services' },
+    { label: '03. Experience', href: '#experience' },
+    { label: '04. Work', href: '#work' },
+    { label: '05. Certifications', href: '#certifications' },
+    { label: '06. Contact', href: '#contact' },
   ]
 
   const headerVariants = {
@@ -43,13 +75,13 @@ const Header = () => {
       variants={headerVariants}
       initial="hidden"
       animate="visible"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-border transition-all duration-300 ${
         isScrolled 
-          ? 'bg-primary/95 backdrop-blur-md border-b border-border-muted/20' 
+          ? 'bg-primary/95 backdrop-blur-md border-b border-border' 
           : 'bg-primary/95 backdrop-blur-md'
       }`}
     >
-      <div className="container-custom px-4 sm:px-6 lg:px-8">
+      <div className="container-custom px-4 py-2 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <motion.div
@@ -108,11 +140,12 @@ const Header = () => {
               initial="hidden"
               animate="visible"
               className="btn-primary"
+              target="_blank"
             >
               Resume
             </motion.a>
             
-            <ThemeToggle />
+            {/* <ThemeToggle className="ml-2" /> */}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -125,34 +158,39 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-border-muted/20"
-          >
-            <div className="py-4 space-y-4">
-              {navItems.map((item) => (
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              ref={mobileMenuRef}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden border-t border-border bg-primary/95 backdrop-blur-md"
+            >
+              <div className="py-4 space-y-4">
+                {navItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className="block text-accent hover:text-accent-dark transition-colors duration-300 font-mono text-sm py-2 px-6"
+                  >
+                    {item.label}
+                  </a>
+                ))}
                 <a
-                  key={item.href}
-                  href={item.href}
+                  href="/resume.pdf"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-accent hover:text-accent-dark transition-colors duration-300 font-mono text-sm py-2"
+                  className="block btn-primary text-center mx-6 mt-4"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  {item.label}
+                  Resume
                 </a>
-              ))}
-              <a
-                href="/resume.pdf"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block btn-primary text-center"
-              >
-                Resume
-              </a>
-            </div>
-          </motion.div>
-        )}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.header>
   )

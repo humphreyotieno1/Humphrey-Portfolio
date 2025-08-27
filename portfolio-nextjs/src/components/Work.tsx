@@ -2,68 +2,98 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { ExternalLink, Github, ArrowUpRight } from 'lucide-react'
 
 const Work = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const [currentPage, setCurrentPage] = useState(1)
+  const projectsPerPage = 4
+
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce platform built with Next.js, featuring user authentication, product management, payment processing, and admin dashboard.',
-      image: '/api/placeholder/600/400',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe', 'PostgreSQL'],
-      github: 'https://github.com/humphrey/ecommerce',
-      live: 'https://ecommerce-demo.com',
+      title: 'LegalizeMe',
+      description: 'A legal AI platform build with Next.js and TypeScript. It provides legal resources to users through a user-friendly website. It also has a chatbot that can answer legal questions.',
+      image: '/legalizeme.png',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Django', 'PostgreSQL', 'ChatGPT', 'OpenAI'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://www.legalizeme.site/',
       featured: true
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: '/api/placeholder/600/400',
-      technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Redux'],
-      github: 'https://github.com/humphrey/task-manager',
-      live: 'https://task-manager-demo.com',
+      title: 'Maxon Computers Ecommerce',
+      description: 'An e-commerce platform for computer products and accessories. It is built with Next.js and TypeScript. Payments via MPESA Daraja API.',
+      image: '/maxon.png',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'FastAPI', 'MPESA Daraja API'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://www.maxoncomputers.co.ke/',
       featured: true
     },
     {
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website built with Next.js and Tailwind CSS, featuring smooth animations and optimal performance.',
-      image: '/api/placeholder/600/400',
+      title: 'Pisafa Gifts Shop Ecommerce',
+      description: 'An e-commerce platform that specializes in personalized gifts and custom products, providing a seamless shopping experience for customers looking for unique and meaningful gifts.',
+      image: '/pisafa.png',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'FastAPI', 'MPESA Daraja API'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://www.pisafagiftshop.com/',
+      featured: false
+    },
+    {
+      title: 'W.G.Gitau and Associates',
+      description: 'W.G Gitau & Associates (W.G.G) is an independent Accounting and Audit Consulting firm based in Kenya that is registered with ICPAK as a practising Certified Public Accountants.',
+      image: '/wg.png',
+      technologies: ['NextJS', 'TailwindCSS'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://www.wggitau.co.ke/',
+      featured: false
+    },
+    {
+      title: "Chrispin Oguna's Portfolio",
+      description: "A portfolio website for an ICT instructor, showcasing his skills, projects, and experiences in the tech industry. The platform aims to provide a comprehensive overview of his work and expertise to potential clients and employers.",
+      image: "/chris.png",
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-      github: 'https://github.com/humphrey/portfolio',
-      live: 'https://portfolio-demo.com',
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://chrispinoguna.vercel.app/',
       featured: false
     },
     {
-      title: 'Weather Dashboard',
-      description: 'A weather dashboard application that displays current weather conditions and forecasts using multiple weather APIs.',
-      image: '/api/placeholder/600/400',
-      technologies: ['React', 'OpenWeather API', 'Chart.js', 'CSS Modules'],
-      github: 'https://github.com/humphrey/weather-dashboard',
-      live: 'https://weather-demo.com',
+      title: "Mary M'Mukindia's Portfolio",
+      description: "Mary M'Mukindia is a catalyst for leadership transformation. She believes in the power of clarity, conviction, and bold leadership to create lasting impact in business and society.",
+      image: "/mary.png",
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://mary-mmukindia-coaching.vercel.app/',
       featured: false
     },
     {
-      title: 'Blog Platform',
-      description: 'A headless CMS blog platform with markdown support, SEO optimization, and a modern admin interface.',
-      image: '/api/placeholder/600/400',
-      technologies: ['Next.js', 'Contentful', 'GraphQL', 'Tailwind CSS'],
-      github: 'https://github.com/humphrey/blog-platform',
-      live: 'https://blog-demo.com',
+      title: "Byron Otieno Portfolio",
+      description: "A personal portfolio website built for Byron Otieno, an EcoTourism Manager, showcasing his passion for sustainable tourism and environmental conservation. The site highlights his professional profile, skills in team-building and project management, and dedication to impactful eco-friendly initiatives.",
+      image: "/byron.png",
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://byronotieno.vercel.app/',
       featured: false
     },
     {
-      title: 'Social Media Dashboard',
-      description: 'A comprehensive social media analytics dashboard that aggregates data from multiple platforms.',
-      image: '/api/placeholder/600/400',
-      technologies: ['React', 'D3.js', 'Node.js', 'Express', 'MongoDB'],
-      github: 'https://github.com/humphrey/social-dashboard',
-      live: 'https://social-demo.com',
+      title: "Kingdom Call",
+      description: "A platform designed to connect, inspire, and support the community in their faith journey, providing a seamless user experience for visitors seeking information and engagement with the ministry.",
+      image: "/kingdom.png",
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://kingdom-call.vercel.app/',
       featured: false
-    }
+    },
+    {
+      title: "Cinephix",
+      description: "Cinephix is a movie streaming platform that offers a wide range of movies and TV shows, with a user-friendly interface for searching, watching, and sharing content.",
+      image: "/cinephix.png",
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'PostgreSQL'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://cinephix.vercel.app/',
+      featured: false
+    },
   ]
 
   const containerVariants = {
@@ -109,7 +139,7 @@ const Work = () => {
           animate={isInView ? 'visible' : 'hidden'}
           className="grid grid-cols-1 lg:grid-cols-2 gap-8"
         >
-          {projects.map((project, index) => (
+          {projects.slice((currentPage - 1) * projectsPerPage, currentPage * projectsPerPage).map((project, index) => (
             <motion.div
               key={project.title}
               variants={itemVariants}
@@ -118,11 +148,15 @@ const Work = () => {
                 project.featured ? 'lg:col-span-2' : ''
               }`}
             >
-              <div className="relative overflow-hidden rounded-lg bg-primary-lighter/30 border border-border-muted/20 hover:border-accent/30 transition-all duration-300">
+              <div className={`h-full flex flex-col overflow-hidden rounded-lg bg-primary-lighter/30 border border-border-muted/20 hover:border-accent/30 transition-all duration-300 ${!project.featured ? 'h-full' : ''}`}>
                 {/* Project Image */}
-                <div className="relative h-64 overflow-hidden">
+                <div className={`relative ${project.featured ? 'h-80' : 'h-48'} overflow-hidden flex-shrink-0`}>
                   <div className="w-full h-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
-                    <span className="text-accent/60 text-lg font-mono">Project Preview</span>
+                    <motion.img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   
                   {/* Overlay */}
@@ -134,6 +168,7 @@ const Work = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="p-3 bg-accent/20 text-accent rounded-full hover:bg-accent/30 transition-all duration-300"
+                          onClick={(e) => e.stopPropagation()}
                         >
                           <Github size={20} />
                         </a>
@@ -144,6 +179,7 @@ const Work = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="p-3 bg-accent/20 text-accent rounded-full hover:bg-accent/30 transition-all duration-300"
+                          onClick={(e) => e.stopPropagation()}
                         >
                           <ExternalLink size={20} />
                         </a>
@@ -153,44 +189,50 @@ const Work = () => {
                 </div>
 
                 {/* Project Content */}
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-xl font-semibold text-text-primary group-hover:text-accent transition-colors duration-300">
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="flex items-start justify-between mb-3">
+                    <h3 className={`font-semibold text-text-primary group-hover:text-accent transition-colors duration-300 ${project.featured ? 'text-xl' : 'text-lg line-clamp-1'}`}>
                       {project.title}
                     </h3>
                     {project.featured && (
-                      <span className="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full border border-accent/30">
+                      <span className="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full border border-accent/30 flex-shrink-0 ml-2">
                         Featured
                       </span>
                     )}
                   </div>
                   
-                  <p className="text-text-secondary mb-4 leading-relaxed">
+                  <p className="text-text-secondary mb-4 leading-relaxed line-clamp-2 text-sm">
                     {project.description}
                   </p>
                   
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
+                  <div className="flex flex-wrap gap-2 mb-4 mt-auto">
+                    {project.technologies.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full border border-accent/20"
+                        className="px-2 py-0.5 bg-accent/10 text-accent text-xs rounded-full border border-accent/20 whitespace-nowrap overflow-hidden text-ellipsis"
                       >
                         {tech}
                       </span>
                     ))}
+                    {project.technologies.length > 3 && (
+                      <span className="px-2 py-0.5 bg-accent/10 text-accent text-xs rounded-full border border-accent/20">
+                        +{project.technologies.length - 3}
+                      </span>
+                    )}
                   </div>
                   
-                  <div className="flex gap-4">
+                  <div className="flex gap-4 mt-auto pt-2">
                     {project.github && (
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-accent hover:text-accent-dark transition-colors duration-300 text-sm group/link"
+                        className="flex items-center gap-1 text-accent hover:text-accent-dark transition-colors duration-300 text-xs group/link"
+                        onClick={(e) => e.stopPropagation()}
                       >
-                        <Github size={16} />
-                        Code
-                        <ArrowUpRight size={14} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform duration-300" />
+                        <Github size={14} />
+                        <span>Code</span>
+                        <ArrowUpRight size={12} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-300" />
                       </a>
                     )}
                     {project.live && (
@@ -198,11 +240,12 @@ const Work = () => {
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-accent hover:text-accent-dark transition-colors duration-300 text-sm group/link"
+                        className="flex items-center gap-1 text-accent hover:text-accent-dark transition-colors duration-300 text-xs group/link"
+                        onClick={(e) => e.stopPropagation()}
                       >
-                        <ExternalLink size={16} />
-                        Live Demo
-                        <ArrowUpRight size={14} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform duration-300" />
+                        <ExternalLink size={14} />
+                        <span>Live</span>
+                        <ArrowUpRight size={12} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-300" />
                       </a>
                     )}
                   </div>
@@ -212,15 +255,39 @@ const Work = () => {
           ))}
         </motion.div>
 
+        {/* Pagination */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="flex justify-center mt-12 space-x-2"
+        >
+          {Array.from({ length: Math.ceil(projects.length / projectsPerPage) }, (_, i) => i + 1).map((number) => (
+            <button
+              key={number}
+              onClick={() => setCurrentPage(number)}
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200 ${
+                currentPage === number
+                  ? 'bg-accent text-white'
+                  : 'bg-primary-lighter/30 text-text-primary hover:bg-accent/20'
+              }`}
+              aria-current={currentPage === number ? 'page' : undefined}
+            >
+              {number}
+            </button>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mt-8"
         >
           <a
-            href="https://github.com/humphrey"
+            href="https://github.com/humphreyotieno1"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary inline-flex items-center gap-2 group"

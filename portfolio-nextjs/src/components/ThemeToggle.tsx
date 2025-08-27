@@ -4,7 +4,11 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Sun, Moon } from 'lucide-react'
 
-const ThemeToggle = () => {
+interface ThemeToggleProps {
+  className?: string;
+}
+
+const ThemeToggle = ({ className = '' }: ThemeToggleProps) => {
   const [isDark, setIsDark] = useState(true)
 
   useEffect(() => {
@@ -33,7 +37,7 @@ const ThemeToggle = () => {
       onClick={toggleTheme}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="p-3 rounded-full bg-primary-lighter/30 border border-border-muted/20 hover:border-accent/30 transition-all duration-300 text-accent hover:text-accent-dark"
+      className={`p-3 rounded-full bg-primary-lighter/30 border border-border-muted/20 hover:border-accent/30 transition-all duration-300 text-accent hover:text-accent-dark ${className}`}
       title={isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
     >
       <motion.div

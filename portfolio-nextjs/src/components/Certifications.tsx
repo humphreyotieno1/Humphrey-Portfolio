@@ -9,6 +9,8 @@ const Certifications = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const [selectedCert, setSelectedCert] = useState<string | null>(null)
+  const [currentPage, setCurrentPage] = useState(1)
+  const certsPerPage = 3
 
   const certifications = [
     {
@@ -66,7 +68,15 @@ const Certifications = () => {
       description: "Participated in the August Cohort Hackathon on September 9th, 2024, with a focus on building dynamic personal portfolio websites. Participants were to showcase their web development skills by highlighting their programming knowledge, projects, and passions through the creation of individual portfolio websites.",
       date: "September 2024",
       category: "Hackathon"
-    }
+    },
+    {
+      id: "mozilla",
+      img: "/mozilla.png",
+      title: "Mozilla Web Literacy Foundational Course",
+      description: "Participated in a foundational web literacy workshop conducted by Mozilla at Moringa School, enhancing skills in web technologies and digital literacy.",
+      date: "September 2024",
+      category: "Upskilling"
+    },
   ]
 
   const containerVariants = {
@@ -120,7 +130,7 @@ const Certifications = () => {
 
           {/* Certifications Grid */}
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {certifications.map((cert, index) => (
+            {certifications.slice((currentPage - 1) * certsPerPage, currentPage * certsPerPage).map((cert, index) => (
               <motion.div
                 key={cert.id}
                 variants={itemVariants}
@@ -128,16 +138,25 @@ const Certifications = () => {
                 className="group cursor-pointer"
                 onClick={() => openModal(cert.id)}
               >
-                <div className="bg-primary-lighter/30 rounded-lg border border-border-muted/20 hover:border-accent/30 transition-all duration-300 overflow-hidden group-hover:shadow-lg">
+                <div className="h-full flex flex-col bg-primary-lighter/30 rounded-lg border border-border-muted/20 hover:border-accent/30 transition-all duration-300 overflow-hidden group-hover:shadow-lg">
                   {/* Certificate Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-48 overflow-hidden flex-shrink-0">
                     <div className="w-full h-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
-                      <span className="text-accent/60 text-lg font-mono">Certificate</span>
+                      <motion.img
+                        src={cert.img}
+                        alt={cert.title}
+                        className="w-full h-full object-cover"
+                        variants={itemVariants}
+                        custom={index}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{ duration: 0.6, ease: "easeOut" as const }}
+                      />
                     </div>
                     
                     {/* Hover Overlay */}
                     <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="text-center">
+                      <div className="text-center p-4">
                         <Award size={32} className="text-accent mx-auto mb-2" />
                         <span className="text-accent text-sm font-medium">View Certificate</span>
                       </div>
@@ -145,26 +164,26 @@ const Certifications = () => {
                   </div>
 
                   {/* Certificate Content */}
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-grow">
                     <div className="flex items-center gap-2 mb-3">
-                      <Calendar size={16} className="text-accent" />
+                      <Calendar size={16} className="text-accent flex-shrink-0" />
                       <span className="text-accent text-sm font-mono">{cert.date}</span>
                     </div>
                     
-                    <h3 className="text-lg font-semibold text-text-primary mb-2 group-hover:text-accent transition-colors duration-300">
+                    <h3 className="text-lg font-semibold text-text-primary mb-2 group-hover:text-accent transition-colors duration-300 line-clamp-2">
                       {cert.title}
                     </h3>
                     
-                    <p className="text-text-secondary text-sm mb-4 line-clamp-3">
+                    <p className="text-text-secondary text-sm mb-4 line-clamp-3 flex-grow">
                       {cert.description}
                     </p>
                     
-                    <div className="flex items-center justify-between">
-                      <span className="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full border border-accent/20">
+                    <div className="flex items-center justify-between mt-auto">
+                      <span className="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full border border-accent/20 whitespace-nowrap overflow-hidden text-ellipsis max-w-[70%]">
                         {cert.category}
                       </span>
                       
-                      <ExternalLink size={16} className="text-accent group-hover:translate-x-1 transition-transform duration-300" />
+                      <ExternalLink size={16} className="text-accent group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
                     </div>
                   </div>
                 </div>
@@ -172,16 +191,39 @@ const Certifications = () => {
             ))}
           </div>
 
+          {/* Pagination */}
+          {certifications.length > certsPerPage && (
+            <motion.div
+              variants={itemVariants}
+              className="flex justify-center mt-12 space-x-2"
+            >
+              {Array.from({ length: Math.ceil(certifications.length / certsPerPage) }, (_, i) => i + 1).map((number) => (
+                <button
+                  key={number}
+                  onClick={() => setCurrentPage(number)}
+                  className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200 ${
+                    currentPage === number
+                      ? 'bg-accent text-white'
+                      : 'bg-primary-lighter/30 text-text-primary hover:bg-accent/20'
+                  }`}
+                  aria-current={currentPage === number ? 'page' : undefined}
+                >
+                  {number}
+                </button>
+              ))}
+            </motion.div>
+          )}
+
           {/* Stats Section */}
           <motion.div variants={itemVariants} className="mt-16 text-center">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div>
-                <div className="text-3xl font-bold text-accent mb-2">7+</div>
-                <div className="text-text-secondary">Certifications</div>
+                <div className="text-3xl font-bold text-accent mb-2">7</div>
+                <div className="text-text-secondary">Certifications and still learning</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-accent mb-2">12+</div>
-                <div className="text-text-secondary">Months Training</div>
+                <div className="text-3xl font-bold text-accent mb-2">12</div>
+                <div className="text-text-secondary">Months Training + Continuous Improvement</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-accent mb-2">3+</div>
@@ -222,18 +264,32 @@ const Certifications = () => {
               </button>
             </div>
             
-            <div className="p-6">
+            <div className="p-6 max-h-[80vh] overflow-y-auto">
               {certifications.find(c => c.id === selectedCert) && (
-                <div>
-                  <h2 className="text-2xl font-bold text-text-primary mb-4">
-                    {certifications.find(c => c.id === selectedCert)?.title}
-                  </h2>
-                  <p className="text-text-secondary mb-4">
-                    {certifications.find(c => c.id === selectedCert)?.description}
-                  </p>
-                  <div className="flex items-center gap-4 text-sm text-text-secondary">
-                    <span>Date: {certifications.find(c => c.id === selectedCert)?.date}</span>
-                    <span>Category: {certifications.find(c => c.id === selectedCert)?.category}</span>
+                <div className="space-y-6">
+                  <div className="bg-primary-lighter/20 p-4 rounded-lg">
+                    <img 
+                      src={certifications.find(c => c.id === selectedCert)?.img} 
+                      alt={certifications.find(c => c.id === selectedCert)?.title}
+                      className="w-full h-auto max-h-[60vh] object-contain rounded"
+                    />
+                  </div>
+                  <div className="space-y-4">
+                    <h2 className="text-2xl font-bold text-text-primary">
+                      {certifications.find(c => c.id === selectedCert)?.title}
+                    </h2>
+                    <div className="flex flex-wrap items-center gap-4 text-sm text-text-secondary">
+                      <span className="flex items-center gap-1">
+                        <Calendar size={16} className="text-accent" />
+                        {certifications.find(c => c.id === selectedCert)?.date}
+                      </span>
+                      <span className="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full border border-accent/20">
+                        {certifications.find(c => c.id === selectedCert)?.category}
+                      </span>
+                    </div>
+                    <p className="text-text-secondary leading-relaxed">
+                      {certifications.find(c => c.id === selectedCert)?.description}
+                    </p>
                   </div>
                 </div>
               )}
