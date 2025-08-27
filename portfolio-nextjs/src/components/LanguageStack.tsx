@@ -11,24 +11,8 @@ import { SiNextdotjs, SiTailwindcss, SiPostgresql, SiMysql, SiFlask, SiTypescrip
 const LanguageStack = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
-  const [counts, setCounts] = useState({
-    nextjs: 0,
-    html: 0,
-    css: 0,
-    javascript: 0,
-    nodejs: 0,
-    react: 0,
-    python: 0,
-    flask: 0,
-    database: 0,
-    mysql: 0,
-    postgresql: 0,
-    tailwind: 0,
-    django: 0,
-    fastapi: 0,
-    docker: 0,
-    git: 0
-  })
+  // Initialize counts with all zeros first
+  const [counts, setCounts] = useState<Record<string, number>>({})
 
   const languages = useMemo(() => [
     { icon: SiNextdotjs, label: "NextJS", proficiency: 85, color: "text-blue-500" },
@@ -53,16 +37,41 @@ const LanguageStack = () => {
   useEffect(() => {
     if (isInView) {
       const timer = setTimeout(() => {
-        setCounts(prevCounts => {
-          const newCounts = { ...prevCounts };
-          languages.forEach((lang) => {
-            const key = lang.label.toLowerCase().replace(/\s+/g, '');
-            if (key in newCounts) {
-              newCounts[key as keyof typeof newCounts] = lang.proficiency;
-            }
-          });
-          return newCounts;
+        const newCounts: Record<string, number> = {};
+        languages.forEach((lang) => {
+          const key = lang.label.toLowerCase().replace(/\s+/g, '');
+          newCounts[key] = 0; // Initialize all to 0 first
         });
+        setCounts(newCounts);
+
+        // Animate the counters
+        const animationDuration = 1500; // 1.5 seconds
+        const startTime = Date.now();
+        
+        const animateCounts = () => {
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(elapsed / animationDuration, 1);
+          
+          setCounts(currentCounts => {
+            const updatedCounts = {...currentCounts};
+            languages.forEach(lang => {
+              const key = lang.label.toLowerCase().replace(/\s+/g, '');
+              updatedCounts[key] = Math.floor(progress * lang.proficiency);
+            });
+            return updatedCounts;
+          });
+          
+          if (progress < 1) {
+            requestAnimationFrame(animateCounts);
+          }
+        };
+        
+        requestAnimationFrame(animateCounts);
+        
+        return () => {
+          // Clean up animation frame if component unmounts
+          cancelAnimationFrame(animateCounts as unknown as number);
+        };
       }, 500);
 
       return () => clearTimeout(timer);
@@ -112,7 +121,7 @@ const LanguageStack = () => {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
             {languages.map((lang, index) => {
               const key = lang.label.toLowerCase().replace(/\s+/g, '')
-              const currentCount = counts[key as keyof typeof counts] || 0
+              const currentCount = counts[key] || 0
               
               return (
                 <motion.div
