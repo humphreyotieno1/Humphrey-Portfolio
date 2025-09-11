@@ -1,0 +1,27 @@
+{
+  "name": "Humphrey Otieno - Full Stack Software Engineer",
+  "short_name": "Humphrey Portfolio",
+  "description": "Portfolio website of Humphrey Otieno, Full Stack Software Engineer specializing in React, Next.js, Python, and modern web technologies.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/humlogo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/humlogo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "software engineer"],
+  "lang": "en",
+  "dir": "ltr"
+}

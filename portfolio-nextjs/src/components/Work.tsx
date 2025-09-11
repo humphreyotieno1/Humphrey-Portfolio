@@ -23,23 +23,32 @@ const Work = () => {
       featured: true
     },
     {
-      title: 'Maxon Computers Ecommerce',
-      description: 'An e-commerce platform for computer products and accessories. It is built with Next.js and TypeScript. Payments via MPESA Daraja API.',
-      image: '/maxon.png',
+      title: 'Denmar Tours and Travels',
+      description: 'A tour and travel agency website built with Next.js and TypeScript. It provides a seamless experience for users to book tours and travels.',
+      image: '/denmar.png',
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'FastAPI', 'MPESA Daraja API'],
       github: 'https://github.com/humphreyotieno1',
-      live: 'https://www.maxoncomputers.co.ke/',
+      live: 'https://www.denmartravel.co.ke/',
       featured: true
     },
-    {
-      title: 'Pisafa Gifts Shop Ecommerce',
-      description: 'An e-commerce platform that specializes in personalized gifts and custom products, providing a seamless shopping experience for customers looking for unique and meaningful gifts.',
-      image: '/pisafa.png',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'FastAPI', 'MPESA Daraja API'],
-      github: 'https://github.com/humphreyotieno1',
-      live: 'https://www.pisafagiftshop.com/',
-      featured: false
-    },
+    // {
+    //   title: 'Maxon Computers Ecommerce',
+    //   description: 'An e-commerce platform for computer products and accessories. It is built with Next.js and TypeScript. Payments via MPESA Daraja API.',
+    //   image: '/maxon.png',
+    //   technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'FastAPI', 'MPESA Daraja API'],
+    //   github: 'https://github.com/humphreyotieno1',
+    //   live: 'https://www.maxoncomputers.co.ke/',
+    //   featured: true
+    // },
+    // {
+    //   title: 'Pisafa Gifts Shop Ecommerce',
+    //   description: 'An e-commerce platform that specializes in personalized gifts and custom products, providing a seamless shopping experience for customers looking for unique and meaningful gifts.',
+    //   image: '/pisafa.png',
+    //   technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'FastAPI', 'MPESA Daraja API'],
+    //   github: 'https://github.com/humphreyotieno1',
+    //   live: 'https://www.pisafagiftshop.com/',
+    //   featured: false
+    // },
     {
       title: 'W.G.Gitau and Associates',
       description: 'W.G Gitau & Associates (W.G.G) is an independent Accounting and Audit Consulting firm based in Kenya that is registered with ICPAK as a practising Certified Public Accountants.',

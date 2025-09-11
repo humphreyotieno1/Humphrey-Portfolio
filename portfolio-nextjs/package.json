@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seo:test": "next build && echo 'SEO build completed. Check console for SEO validation results.'",
+    "seo:audit": "next build && lighthouse http://localhost:3000 --output=html --output-path=./lighthouse-report.html --chrome-flags='--headless'",
+    "export": "next build && next export"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",

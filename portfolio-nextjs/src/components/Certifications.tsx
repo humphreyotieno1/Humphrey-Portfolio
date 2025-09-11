@@ -268,6 +268,7 @@ const Certifications = () => {
               {certifications.find(c => c.id === selectedCert) && (
                 <div className="space-y-6">
                   <div className="bg-primary-lighter/20 p-4 rounded-lg">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img 
                       src={certifications.find(c => c.id === selectedCert)?.img} 
                       alt={certifications.find(c => c.id === selectedCert)?.title}
