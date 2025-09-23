@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Download, Github, Linkedin, Twitter, Globe, BookOpen } from 'lucide-react'
 import { FaDiscord} from 'react-icons/fa'
 import Typewriter from './Typewriter'
+import Image from 'next/image'
 
 const Hero = () => {
   const containerVariants = {
@@ -195,12 +196,13 @@ const Hero = () => {
               >
                 <div className="w-full h-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
                   {/* <span className="text-accent/60 text-lg font-mono">Profile Image</span> */}
-                  <motion.img
+                  <Image
                     src="/hum.png"
                     alt="Profile Image"
                     width={320}
                     height={320}
                     className="w-full h-full object-cover rounded-full"
+                    priority
                   />
                 </div>
               </motion.div>
