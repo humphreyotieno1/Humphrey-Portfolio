@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import BackToTop from '@/components/BackToTop'
 import StructuredData from '@/components/StructuredData'
-import GoogleAnalytics from '@/components/GoogleAnalytics'
+import GoogleTagManager from '@/components/GoogleTagManager'
 import PerformanceMonitor from '@/components/PerformanceMonitor'
 
 export const metadata: Metadata = {
@@ -96,7 +96,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <StructuredData />
-        <GoogleAnalytics GA_TRACKING_ID="G-QDQEL9P44E" />
+        <GoogleTagManager GTM_ID="GTM-5GFBJVJQ" />
       </head>
       <body className="antialiased bg-primary text-text-primary min-h-screen">
         {children}
