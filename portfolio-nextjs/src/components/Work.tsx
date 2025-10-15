@@ -31,6 +31,15 @@ const Work = () => {
       live: 'https://www.denmartravel.co.ke/',
       featured: true
     },
+    {
+      title: 'Grahad Ventures Limited',
+      description: 'A construction and hardware supplies company website built with Next.js and TypeScript. It provides a seamless experience for users to book tours and travels.',
+      image: '/grahad.png',
+      technologies: ['Next.js', 'Golang', 'PostgreSQL', 'Tailwind CSS'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://www.grahadventures.co.ke/',
+      featured: true
+    },
     // {
     //   title: 'Maxon Computers Ecommerce',
     //   description: 'An e-commerce platform for computer products and accessories. It is built with Next.js and TypeScript. Payments via MPESA Daraja API.',

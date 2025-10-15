@@ -6,7 +6,7 @@ import { useRef, useState, useEffect, useMemo } from 'react'
 import { 
   FaPython, FaReact, FaNode, FaDatabase, FaJsSquare, FaHtml5, FaCss3,
 } from 'react-icons/fa'
-import { SiNextdotjs, SiTailwindcss, SiPostgresql, SiMysql, SiFlask, SiTypescript, SiDjango, SiFastapi, SiDocker, SiGit } from 'react-icons/si'
+import { SiNextdotjs, SiTailwindcss, SiPostgresql, SiMysql, SiFlask, SiTypescript, SiDjango, SiFastapi, SiDocker, SiGit, SiGo } from 'react-icons/si'
 
 const LanguageStack = () => {
   const ref = useRef(null)
@@ -16,6 +16,7 @@ const LanguageStack = () => {
 
   const languages = useMemo(() => [
     { icon: SiNextdotjs, label: "NextJS", proficiency: 85, color: "text-blue-500" },
+    { icon: SiGo, label: "Golang", proficiency: 60, color: "text-blue-500" },
     { icon: FaHtml5, label: "HTML5", proficiency: 95, color: "text-orange-500" },
     { icon: FaCss3, label: "CSS3", proficiency: 90, color: "text-blue-500" },
     { icon: FaJsSquare, label: "JavaScript", proficiency: 80, color: "text-yellow-400" },
