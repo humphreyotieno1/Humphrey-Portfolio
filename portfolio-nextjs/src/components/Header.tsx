@@ -127,9 +127,10 @@ const Header = () => {
                 custom={i}
                 initial="hidden"
                 animate="visible"
-                className="text-accent hover:text-accent-dark transition-colors duration-300 font-mono text-sm"
+                className="text-accent hover:text-accent-dark transition-all duration-300 font-mono text-sm relative group"
               >
                 {item.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
               </motion.a>
             ))}
             
@@ -173,9 +174,10 @@ const Header = () => {
                     key={item.href}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className="block text-accent hover:text-accent-dark transition-colors duration-300 font-mono text-sm py-2 px-6"
+                    className="block text-accent hover:text-accent-dark transition-all duration-300 font-mono text-sm py-2 px-6 relative group"
                   >
                     {item.label}
+                    <span className="absolute bottom-2 left-6 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-[calc(100%-3rem)]"></span>
                   </a>
                 ))}
                 <a

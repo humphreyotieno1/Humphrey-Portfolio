@@ -32,6 +32,15 @@ const Work = () => {
       featured: true
     },
     {
+      title: 'Everyday Resilience Counselling Kenya',
+      description: 'A counselling agency website built with Next.js and TypeScript. It provides a seamless experience for users to book counselling sessions.',
+      image: '/everydayresilience.png',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://www.everydayresilience.co.ke/',
+      featured: true
+    },
+    {
       title: 'Grahad Ventures Limited',
       description: 'A construction and hardware supplies company website built with Next.js and TypeScript. It provides a seamless experience for users to book tours and travels.',
       image: '/grahad.png',

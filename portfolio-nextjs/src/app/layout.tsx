@@ -80,9 +80,9 @@ export const metadata: Metadata = {
     google: 'G9XneihxEnUEPYZokRGqVlEDTDfVgUbykHQ9v4WoviQ',
   },
   icons: {
-    icon: '/humlogo.png',
-    shortcut: '/humlogo.png',
-    apple: '/humlogo.png',
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
   },
   manifest: '/manifest.json',
 }
