@@ -96,14 +96,14 @@ export default function RootLayout({
       <head>
         <StructuredData />
         {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDQEL9P44E"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-TBS6R279WG"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-QDQEL9P44E');
+              gtag('config', 'G-TBS6R279WG');
             `,
           }}
         />
