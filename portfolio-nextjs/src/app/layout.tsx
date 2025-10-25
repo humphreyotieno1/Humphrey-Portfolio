@@ -96,7 +96,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <StructuredData />
-        <GoogleAnalytics GA_TRACKING_ID="G-TBS6R279WG" />
+        <GoogleAnalytics GA_TRACKING_ID="G-QDQEL9P44E" />
       </head>
       <body className="antialiased bg-primary text-text-primary min-h-screen">
         {children}

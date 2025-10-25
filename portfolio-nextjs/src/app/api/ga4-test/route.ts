@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function GET() {
   return NextResponse.json({
     message: 'GA4 Configuration Test',
-    trackingId: 'G-TBS6R279WG',
+    trackingId: 'G-QDQEL9P44E',
     status: 'configured',
     timestamp: new Date().toISOString()
   })
