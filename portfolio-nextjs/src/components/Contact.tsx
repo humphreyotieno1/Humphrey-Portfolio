@@ -51,7 +51,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch('https://humphrey-portfolio-1.onrender.com/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         body: data,
       })
