@@ -74,7 +74,7 @@ const Work = () => {
       technologies: ['NextJS', 'TailwindCSS'],
       github: 'https://github.com/humphreyotieno1',
       live: 'https://www.wggitau.co.ke/',
-      featured: false
+      featured: true
     },
     {
       title: "Chrispin Oguna's Portfolio",
