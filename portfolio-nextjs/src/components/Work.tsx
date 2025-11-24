@@ -50,6 +50,15 @@ const Work = () => {
       featured: true
     },
     {
+      title: 'Grahad Ventures Limited',
+      description: 'A construction and hardware supplies company website built with Next.js and TypeScript. It provides a seamless experience for users to book tours and travels.',
+      image: '/grahad.png',
+      technologies: ['Next.js', 'Golang', 'PostgreSQL', 'Tailwind CSS'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://www.grahadventures.co.ke/',
+      featured: true
+    },
+    {
       title: 'W.G.Gitau and Associates',
       description: 'W.G Gitau & Associates (W.G.G) is an independent Accounting and Audit Consulting firm based in Kenya that is registered with ICPAK as a practising Certified Public Accountants.',
       image: '/wg.png',
@@ -65,15 +74,6 @@ const Work = () => {
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Django', 'PostgreSQL', 'ChatGPT', 'OpenAI'],
       github: 'https://github.com/humphreyotieno1',
       live: 'https://www.legalizeme.site/',
-      featured: true
-    },
-    {
-      title: 'Grahad Ventures Limited',
-      description: 'A construction and hardware supplies company website built with Next.js and TypeScript. It provides a seamless experience for users to book tours and travels.',
-      image: '/grahad.png',
-      technologies: ['Next.js', 'Golang', 'PostgreSQL', 'Tailwind CSS'],
-      github: 'https://github.com/humphreyotieno1',
-      live: 'https://www.grahadventures.co.ke/',
       featured: true
     },
     // {
