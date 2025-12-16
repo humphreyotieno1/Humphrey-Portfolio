@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-// import ThemeToggle from './ThemeToggle'
+import Link from 'next/link'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -36,7 +36,7 @@ const Header = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     setIsMobileMenuOpen(false)
-    
+
     // Wait for the menu to close before scrolling
     setTimeout(() => {
       const targetId = href.substring(1)
@@ -58,7 +58,7 @@ const Header = () => {
 
   const headerVariants = {
     hidden: { y: -100, opacity: 0 },
-          visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" as const } }
+    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" as const } }
   }
 
   const navItemVariants = {
@@ -66,7 +66,7 @@ const Header = () => {
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
-              transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" as const }
+      transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" as const }
     })
   }
 
@@ -75,11 +75,10 @@ const Header = () => {
       variants={headerVariants}
       initial="hidden"
       animate="visible"
-      className={`fixed top-0 left-0 right-0 z-50 border-b border-border transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-primary/95 backdrop-blur-md border-b border-border' 
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-border transition-all duration-300 ${isScrolled
+          ? 'bg-primary/95 backdrop-blur-md border-b border-border'
           : 'bg-primary/95 backdrop-blur-md'
-      }`}
+        }`}
     >
       <div className="container-custom px-4 py-2 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -90,31 +89,36 @@ const Header = () => {
             transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
             className="flex items-center"
           >
-            <div className="w-10 h-10 relative">
-              <svg
-                viewBox="0 0 40 40"
-                className="w-full h-full"
-              >
-                <polygon
-                  points="20,2 38,12 38,28 20,38 2,28 2,12"
-                  fill="none"
-                  stroke="#64FFDA"
-                  strokeWidth="2"
-                  className="animate-pulse"
-                />
-                <text
-                  x="20"
-                  y="26"
-                  textAnchor="middle"
-                  fill="#CCD6F6"
-                  fontSize="16"
-                  fontWeight="bold"
-                  fontFamily="Inter, sans-serif"
+            <Link href="/" onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}>
+              <div className="w-10 h-10 relative cursor-pointer">
+                <svg
+                  viewBox="0 0 40 40"
+                  className="w-full h-full"
                 >
-                  H
-                </text>
-              </svg>
-            </div>
+                  <polygon
+                    points="20,2 38,12 38,28 20,38 2,28 2,12"
+                    fill="none"
+                    stroke="#64FFDA"
+                    strokeWidth="2"
+                    className="animate-pulse"
+                  />
+                  <text
+                    x="20"
+                    y="26"
+                    textAnchor="middle"
+                    fill="#CCD6F6"
+                    fontSize="16"
+                    fontWeight="bold"
+                    fontFamily="Inter, sans-serif"
+                  >
+                    H
+                  </text>
+                </svg>
+              </div>
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -133,7 +137,7 @@ const Header = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
               </motion.a>
             ))}
-            
+
             <motion.a
               href="/resume.pdf"
               variants={navItemVariants}
@@ -145,7 +149,7 @@ const Header = () => {
             >
               Resume
             </motion.a>
-            
+
             {/* <ThemeToggle className="ml-2" /> */}
           </nav>
 
