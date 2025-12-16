@@ -197,7 +197,7 @@ const Hero = () => {
                 <div className="w-full h-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center">
                   {/* <span className="text-accent/60 text-lg font-mono">Profile Image</span> */}
                   <Image
-                    src="/hum.png"
+                    src="/hum2.png"
                     alt="Profile Image"
                     width={320}
                     height={320}

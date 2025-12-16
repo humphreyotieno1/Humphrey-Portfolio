@@ -9,17 +9,35 @@ const Work = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const [currentPage, setCurrentPage] = useState(1)
-  const projectsPerPage = 4
+  const projectsPerPage = 7
 
 
   const projects = [
+      {
+      title: 'Hecta Consulting',
+      description: 'Hecta Consulting is a multidisciplinary healthcare consultancy firm dedicated to strengthening health and community systems across Africa, offering technical expertise and evidence-based insights to design sustainable solutions.',
+      image: '/hecta.png',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://hecta-consulting.vercel.app/',
+      featured: true
+    },
     {
       title: 'Denmar Tours and Travels',
       description: 'A tour and travel agency website built with Next.js and TypeScript. It provides a seamless experience for users to book tours and travels.',
       image: '/denmar.png',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'FastAPI', 'MPESA Daraja API'],
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'OpenAI'],
       github: 'https://github.com/humphreyotieno1',
       live: 'https://www.denmartravel.co.ke/',
+      featured: true
+    },
+    {
+      title: 'Everyday Resilience Counselling Kenya',
+      description: 'A counselling agency website built with Next.js and TypeScript. It provides a seamless experience for users to book counselling sessions.',
+      image: '/everyday.png',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://www.everydayresilience.co.ke/',
       featured: true
     },
     {
@@ -32,12 +50,12 @@ const Work = () => {
       featured: true
     },
     {
-      title: 'Everyday Resilience Counselling Kenya',
-      description: 'A counselling agency website built with Next.js and TypeScript. It provides a seamless experience for users to book counselling sessions.',
-      image: '/everydayresilience.png',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      title: 'W.G.Gitau and Associates',
+      description: 'W.G Gitau & Associates (W.G.G) is an independent Accounting and Audit Consulting firm based in Kenya that is registered with ICPAK as a practising Certified Public Accountants.',
+      image: '/wg.png',
+      technologies: ['NextJS', 'TailwindCSS'],
       github: 'https://github.com/humphreyotieno1',
-      live: 'https://www.everydayresilience.co.ke/',
+      live: 'https://www.wggitau.co.ke/',
       featured: true
     },
     {
@@ -59,12 +77,12 @@ const Work = () => {
       featured: true
     },
     {
-      title: 'W.G.Gitau and Associates',
-      description: 'W.G Gitau & Associates (W.G.G) is an independent Accounting and Audit Consulting firm based in Kenya that is registered with ICPAK as a practising Certified Public Accountants.',
-      image: '/wg.png',
-      technologies: ['NextJS', 'TailwindCSS'],
+      title: "Biteplay",
+      description: "Biteplay is a movie streaming platform that offers a wide range of movies and TV shows, with a user-friendly interface for searching, watching, and sharing content.",
+      image: "/biteplay.png",
+      technologies: ['Reactjs', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'PostgreSQL'],
       github: 'https://github.com/humphreyotieno1',
-      live: 'https://www.wggitau.co.ke/',
+      live: 'https://bite-play.vercel.app/',
       featured: true
     },
     {
@@ -76,15 +94,6 @@ const Work = () => {
       live: 'https://www.legalizeme.site/',
       featured: true
     },
-    // {
-    //   title: 'Pisafa Gifts Shop Ecommerce',
-    //   description: 'An e-commerce platform that specializes in personalized gifts and custom products, providing a seamless shopping experience for customers looking for unique and meaningful gifts.',
-    //   image: '/pisafa.png',
-    //   technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'FastAPI', 'MPESA Daraja API'],
-    //   github: 'https://github.com/humphreyotieno1',
-    //   live: 'https://www.pisafagiftshop.com/',
-    //   featured: false
-    // },
     {
       title: "Chrispin Oguna's Portfolio",
       description: "A portfolio website for an ICT instructor, showcasing his skills, projects, and experiences in the tech industry. The platform aims to provide a comprehensive overview of his work and expertise to potential clients and employers.",
@@ -103,33 +112,33 @@ const Work = () => {
       live: 'https://mary-mmukindia-coaching.vercel.app/',
       featured: false
     },
-    {
-      title: "Byron Otieno Portfolio",
-      description: "A personal portfolio website built for Byron Otieno, an EcoTourism Manager, showcasing his passion for sustainable tourism and environmental conservation. The site highlights his professional profile, skills in team-building and project management, and dedication to impactful eco-friendly initiatives.",
-      image: "/byron.png",
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-      github: 'https://github.com/humphreyotieno1',
-      live: 'https://byronotieno.vercel.app/',
-      featured: false
-    },
-    {
-      title: "Kingdom Call",
-      description: "A platform designed to connect, inspire, and support the community in their faith journey, providing a seamless user experience for visitors seeking information and engagement with the ministry.",
-      image: "/kingdom.png",
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-      github: 'https://github.com/humphreyotieno1',
-      live: 'https://kingdom-call.vercel.app/',
-      featured: false
-    },
-    {
-      title: "Cinephix",
-      description: "Cinephix is a movie streaming platform that offers a wide range of movies and TV shows, with a user-friendly interface for searching, watching, and sharing content.",
-      image: "/cinephix.png",
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'PostgreSQL'],
-      github: 'https://github.com/humphreyotieno1',
-      live: 'https://cinephix.vercel.app/',
-      featured: false
-    },
+    // {
+    //   title: "Byron Otieno Portfolio",
+    //   description: "A personal portfolio website built for Byron Otieno, an EcoTourism Manager, showcasing his passion for sustainable tourism and environmental conservation. The site highlights his professional profile, skills in team-building and project management, and dedication to impactful eco-friendly initiatives.",
+    //   image: "/byron.png",
+    //   technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    //   github: 'https://github.com/humphreyotieno1',
+    //   live: 'https://byronotieno.vercel.app/',
+    //   featured: false
+    // },
+    // {
+    //   title: "Kingdom Call",
+    //   description: "A platform designed to connect, inspire, and support the community in their faith journey, providing a seamless user experience for visitors seeking information and engagement with the ministry.",
+    //   image: "/kingdom.png",
+    //   technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    //   github: 'https://github.com/humphreyotieno1',
+    //   live: 'https://kingdom-call.vercel.app/',
+    //   featured: false
+    // },
+    // {
+    //   title: "Cinephix",
+    //   description: "Cinephix is a movie streaming platform that offers a wide range of movies and TV shows, with a user-friendly interface for searching, watching, and sharing content.",
+    //   image: "/cinephix.png",
+    //   technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'PostgreSQL'],
+    //   github: 'https://github.com/humphreyotieno1',
+    //   live: 'https://cinephix.vercel.app/',
+    //   featured: false
+    // },
   ]
 
   const containerVariants = {
