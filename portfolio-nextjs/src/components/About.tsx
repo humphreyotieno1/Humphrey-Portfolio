@@ -68,13 +68,13 @@ const About = () => {
               <p>
                 Fast-forward to today, and I&apos;ve had the privilege of building software for{' '}
                 <span className="text-accent">ecommerce stores</span>,{' '}
-                <span className="text-accent">a startups</span>,{' '}
+                <span className="text-accent">startups</span>,{' '}
                 <span className="text-accent">legal firms</span>, and{' '}
-                <span className="text-accent"> a travel agency</span>.
+                <span className="text-accent">travel agencies</span>.
               </p>
               
               <p>
-                My main focus these days is building accessible, inclusive products and digital 
+                My main focus is building accessible, inclusive products and digital 
                 experiences for a variety of clients.
               </p>
             </motion.div>
