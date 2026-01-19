@@ -50,6 +50,15 @@ const Work = () => {
       featured: true
     },
     {
+      title: 'LegalizeMe',
+      description: 'A legal AI platform build with Next.js and TypeScript. It provides legal resources to users through a user-friendly website. It also has a chatbot that can answer legal questions.',
+      image: '/legalize.jpeg',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Django', 'PostgreSQL', 'ChatGPT', 'OpenAI'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://www.legalizeme.co.ke/',
+      featured: true
+    },
+    {
       title: 'W.G.Gitau and Associates',
       description: 'W.G Gitau & Associates (W.G.G) is an independent Accounting and Audit Consulting firm based in Kenya that is registered with ICPAK as a practising Certified Public Accountants.',
       image: '/wg.png',
@@ -83,15 +92,6 @@ const Work = () => {
       technologies: ['Reactjs', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'PostgreSQL'],
       github: 'https://github.com/humphreyotieno1',
       live: 'https://bite-play.vercel.app/',
-      featured: true
-    },
-    {
-      title: 'LegalizeMe',
-      description: 'A legal AI platform build with Next.js and TypeScript. It provides legal resources to users through a user-friendly website. It also has a chatbot that can answer legal questions.',
-      image: '/legalizeme.png',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Django', 'PostgreSQL', 'ChatGPT', 'OpenAI'],
-      github: 'https://github.com/humphreyotieno1',
-      live: 'https://www.legalizeme.site/',
       featured: true
     },
     {
