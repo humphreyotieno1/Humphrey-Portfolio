@@ -9,7 +9,7 @@ const Work = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const [currentPage, setCurrentPage] = useState(1)
-  const projectsPerPage = 7
+  const projectsPerPage = 10
 
 
   const projects = [
@@ -59,12 +59,12 @@ const Work = () => {
       featured: true
     },
     {
-      title: 'W.G.Gitau and Associates',
-      description: 'W.G Gitau & Associates (W.G.G) is an independent Accounting and Audit Consulting firm based in Kenya that is registered with ICPAK as a practising Certified Public Accountants.',
-      image: '/wg.png',
-      technologies: ['NextJS', 'TailwindCSS'],
+      title: 'The Bag Bar',
+      description: 'The Bag Bar started with a simple observation: most bags were either beautifully designed but fragile, or durable but lacked style. We set out to bridge that gap. Every piece in our collection is a testament to our commitment to excellence. We source only the finest sustainable materials and partner with master artisans who bring decades of experience to every stitch.',
+      image: '/bagbar.jpeg',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
       github: 'https://github.com/humphreyotieno1',
-      live: 'https://www.wggitau.co.ke/',
+      live: 'https://thebagbar.vercel.app/',
       featured: true
     },
     {
@@ -74,6 +74,24 @@ const Work = () => {
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'FastAPI', 'MPESA Daraja API'],
       github: 'https://github.com/humphreyotieno1',
       live: 'https://www.maxoncomputers.co.ke/',
+      featured: true
+    },
+    {
+      title: 'Techbite Ventures',
+      description: 'Techbite Ventures is a software development agency based in Nairobi, Kenya. We build digital products that drive growth, combining technical excellence with business insight to create solutions that deliver real results.',
+      image: '/techbite.jpeg',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://techbiteventures.vercel.app/',
+      featured: true
+    },
+    {
+      title: 'W.G.Gitau and Associates',
+      description: 'W.G Gitau & Associates (W.G.G) is an independent Accounting and Audit Consulting firm based in Kenya that is registered with ICPAK as a practising Certified Public Accountants.',
+      image: '/wg.png',
+      technologies: ['NextJS', 'TailwindCSS'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://www.wggitau.co.ke/',
       featured: true
     },
     {
