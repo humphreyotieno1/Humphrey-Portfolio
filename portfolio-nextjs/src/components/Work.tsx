@@ -82,7 +82,7 @@ const Work = () => {
       image: '/techbite.jpeg',
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
       github: 'https://github.com/humphreyotieno1',
-      live: 'https://techbiteventures.vercel.app/',
+      live: 'https://www.techbiteventures.com/',
       featured: true
     },
     {
