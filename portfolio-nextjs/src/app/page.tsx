@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   description: 'Humphrey Otieno - Full Stack Software Engineer specializing in React, Next.js, Python, and modern web technologies. View my portfolio, projects, and experience.',
   keywords: [
     'humphrey otieno',
+    'humphrey ouma',
     'software engineer portfolio',
     'full stack developer',
     'react developer',
@@ -33,10 +34,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Humphrey Otieno - Full Stack Software Engineer Portfolio',
     description: 'Experienced Full Stack Software Engineer specializing in React, Next.js, Python, and modern web technologies. Building exceptional digital experiences.',
-    url: 'https://humphrey-portfolio-rho.vercel.app/',
+    url: 'https://humphreydev.vercel.app/',
     images: [
       {
-        url: 'https://humphrey-portfolio-rho.vercel.app/hum.png',
+        url: 'https://humphreydev.vercel.app/hum2.png',
         width: 1200,
         height: 630,
         alt: 'Humphrey Otieno - Full Stack Software Engineer',
@@ -46,10 +47,10 @@ export const metadata: Metadata = {
   twitter: {
     title: 'Humphrey Otieno - Full Stack Software Engineer Portfolio',
     description: 'Experienced Full Stack Software Engineer specializing in React, Next.js, Python, and modern web technologies.',
-    images: ['https://humphrey-portfolio-rho.vercel.app/hum.png'],
+    images: ['https://humphreydev.vercel.app/hum2.png'],
   },
   alternates: {
-    canonical: 'https://humphrey-portfolio-rho.vercel.app/',
+    canonical: 'https://humphreydev.vercel.app/',
   },
 }
 
@@ -61,10 +62,10 @@ export async function generateStaticParams() {
 export default function Home() {
   return (
     <main className="min-h-screen bg-primary">
-      <SEOTest 
+      <SEOTest
         title="Humphrey Otieno - Full Stack Software Engineer Portfolio"
         description="Experienced Full Stack Software Engineer specializing in React, Next.js, Python, and modern web technologies. Building exceptional digital experiences."
-        url="https://humphrey-portfolio-rho.vercel.app/"
+        url="https://humphreydev.vercel.app/"
       />
       <ClientWrapper>
         <Header />

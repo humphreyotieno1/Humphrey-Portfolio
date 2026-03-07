@@ -88,7 +88,7 @@ window.dataLayer.push({
 
 ### **5.1 Preview Mode**
 1. In GTM, click **Preview**
-2. Enter your website URL: `https://humphrey-portfolio-rho.vercel.app`
+2. Enter your website URL: `https://humphreydev.vercel.app`
 3. Test all tags and triggers
 
 ### **5.2 Debug Tools**

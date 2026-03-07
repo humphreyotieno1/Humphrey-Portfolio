@@ -92,7 +92,7 @@ git push origin main
 
 ### 2. **Submit to Search Engines**
 - ✅ Google Search Console: Already verified
-- 📝 Submit sitemap: `https://humphrey-portfolio-rho.vercel.app/sitemap.xml`
+- 📝 Submit sitemap: `https://humphreydev.vercel.app/sitemap.xml`
 - 📝 Submit to Bing Webmaster Tools
 - 📝 Submit to other search engines
 

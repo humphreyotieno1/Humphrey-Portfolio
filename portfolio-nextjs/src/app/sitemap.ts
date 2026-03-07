@@ -3,9 +3,9 @@ import { MetadataRoute } from 'next'
 export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://humphrey-portfolio-rho.vercel.app'
+  const baseUrl = 'https://humphreydev.vercel.app'
   const currentDate = new Date()
-  
+
   return [
     {
       url: baseUrl,

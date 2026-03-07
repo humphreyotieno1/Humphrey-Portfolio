@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer'
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData()
-    
+
     // Extract form data
     const firstName = formData.get('firstName') as string
     const lastName = formData.get('lastName') as string
@@ -72,7 +72,7 @@ export async function POST(request: NextRequest) {
           </div>
           
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #666;">
-            <p>This message was sent from your portfolio contact form at humphrey-portfolio-rho.vercel.app</p>
+            <p>This message was sent from your portfolio contact form at humphreydev.vercel.app</p>
             <p>Received on: ${new Date().toLocaleString()}</p>
           </div>
         </div>
