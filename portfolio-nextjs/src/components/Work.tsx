@@ -22,7 +22,7 @@ const Work = () => {
       image: '/hecta.png',
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL'],
       github: 'https://github.com/humphreyotieno1',
-      live: 'https://hecta-consulting.vercel.app/',
+      live: 'https://www.hectaconsulting.com/',
       featured: true
     },
     {
