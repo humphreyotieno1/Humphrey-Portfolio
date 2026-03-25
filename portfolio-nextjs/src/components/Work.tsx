@@ -79,7 +79,7 @@ const Work = () => {
       title: 'House of Banta',
       category: 'E-Commerce',
       description: 'House of Banta is a contemporary fashion and lifestyle brand specializing in apparel, bags, and everyday essentials designed for modern, style-conscious individuals.',
-      image: '/banta.jpeg',
+      image: '/banta.png',
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
       github: 'https://github.com/humphreyotieno1',
       live: 'https://houseofbanta.vercel.app/',
