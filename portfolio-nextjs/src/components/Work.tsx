@@ -65,14 +65,24 @@ const Work = () => {
       live: 'https://www.legalizeme.co.ke/',
       featured: true
     },
+    // {
+    //   title: 'The Bag Bar',
+    //   category: 'E-Commerce',
+    //   description: 'The Bag Bar started with a simple observation: most bags were either beautifully designed but fragile, or durable but lacked style. We set out to bridge that gap. Every piece in our collection is a testament to our commitment to excellence. We source only the finest sustainable materials and partner with master artisans who bring decades of experience to every stitch.',
+    //   image: '/bagbar.jpeg',
+    //   technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    //   github: 'https://github.com/humphreyotieno1',
+    //   live: 'https://thebagbar.vercel.app/',
+    //   featured: true
+    // },
     {
-      title: 'The Bag Bar',
+      title: 'House of Banta',
       category: 'E-Commerce',
-      description: 'The Bag Bar started with a simple observation: most bags were either beautifully designed but fragile, or durable but lacked style. We set out to bridge that gap. Every piece in our collection is a testament to our commitment to excellence. We source only the finest sustainable materials and partner with master artisans who bring decades of experience to every stitch.',
-      image: '/bagbar.jpeg',
+      description: 'House of Banta is a contemporary fashion and lifestyle brand specializing in apparel, bags, and everyday essentials designed for modern, style-conscious individuals.',
+      image: '/banta.jpeg',
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
       github: 'https://github.com/humphreyotieno1',
-      live: 'https://thebagbar.vercel.app/',
+      live: 'https://houseofbanta.vercel.app/',
       featured: true
     },
     {
@@ -113,6 +123,16 @@ const Work = () => {
       technologies: ["Next.js", "Node.js", "Tailwind CSS"],
       github: "https://github.com/humphreyotieno1",
       live: "https://www.uphomesfuneral.co.ke/",
+      featured: true,
+    },
+    {
+      title: "Ume Funeral Home",
+      category: 'Services',
+      description: "Ume Funeral Home is a family-owned business that has been providing funeral services to the community for over 20 years. We are committed to providing dignified and compassionate funeral services to families in their time of need.",
+      image: "/umehome.png",
+      technologies: ["Next.js", "Node.js", "Tailwind CSS"],
+      github: "https://github.com/humphreyotieno1",
+      live: "https://www.umefuneralhome.co.ke/",
       featured: true,
     },
     {
