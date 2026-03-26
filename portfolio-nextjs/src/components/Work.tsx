@@ -112,7 +112,7 @@ const Work = () => {
       image: "/arthealth.png",
       technologies: ["Next.js", "Node.js", "Tailwind CSS"],
       github: "https://github.com/humphreyotieno1",
-      live: "https://www.artemisltd.co.ke/",
+      live: "https://artemis-health-network.vercel.app/",
       featured: true,
     },
     {
@@ -142,7 +142,7 @@ const Work = () => {
       image: "/artoutsourcing.png",
       technologies: ["Next.js", "Node.js", "Tailwind CSS"],
       github: "https://github.com/humphreyotieno1",
-      live: "https://artemisltd.vercel.app/",
+      live: "https://www.artemisltd.co.ke/",
       featured: true,
     },
     {
