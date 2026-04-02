@@ -5,8 +5,8 @@ export default function StructuredData() {
     "name": "Humphrey Otieno",
     "jobTitle": "Full Stack Software Engineer",
     "description": "Experienced Full Stack Software Engineer specializing in React, Next.js, Python, and modern web technologies. Building exceptional digital experiences with a focus on performance, accessibility, and user satisfaction.",
-    "url": "https://humphreydev.vercel.app/",
-    "image": "https://humphreydev.vercel.app/hum2.png",
+    "url": "https://humphrey.techbiteventures.com/",
+    "image": "https://humphrey.techbiteventures.com/hum2.png",
     "sameAs": [
       "https://github.com/humphreyotieno1",
       "https://www.linkedin.com/in/humphrey-otieno",
@@ -83,7 +83,7 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Humphrey Otieno Portfolio",
-    "url": "https://humphreydev.vercel.app/",
+    "url": "https://humphrey.techbiteventures.com/",
     "description": "Portfolio website of Humphrey Otieno, Full Stack Software Engineer",
     "author": {
       "@type": "Person",
@@ -91,7 +91,7 @@ export default function StructuredData() {
     },
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://humphreydev.vercel.app/?q={search_term_string}",
+      "target": "https://humphrey.techbiteventures.com/?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   }
@@ -100,8 +100,8 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Humphrey Otieno Software Development",
-    "url": "https://humphreydev.vercel.app/",
-    "logo": "https://humphreydev.vercel.app/humlogo.png",
+    "url": "https://humphrey.techbiteventures.com/",
+    "logo": "https://humphrey.techbiteventures.com/humlogo.png",
     "description": "Professional software development services specializing in web applications, mobile apps, and full-stack solutions",
     "founder": {
       "@type": "Person",
