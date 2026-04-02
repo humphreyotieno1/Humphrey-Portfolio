@@ -34,10 +34,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Humphrey Otieno - Full Stack Software Engineer Portfolio',
     description: 'Experienced Full Stack Software Engineer specializing in React, Next.js, Python, and modern web technologies. Building exceptional digital experiences.',
-    url: 'https://humphreydev.vercel.app/',
+    url: 'https://humphrey.techbiteventures.com/',
     images: [
       {
-        url: 'https://humphreydev.vercel.app/hum2.png',
+        url: 'https://humphrey.techbiteventures.com/hum2.png',
         width: 1200,
         height: 630,
         alt: 'Humphrey Otieno - Full Stack Software Engineer',
@@ -47,10 +47,10 @@ export const metadata: Metadata = {
   twitter: {
     title: 'Humphrey Otieno - Full Stack Software Engineer Portfolio',
     description: 'Experienced Full Stack Software Engineer specializing in React, Next.js, Python, and modern web technologies.',
-    images: ['https://humphreydev.vercel.app/hum2.png'],
+    images: ['https://humphrey.techbiteventures.com/hum2.png'],
   },
   alternates: {
-    canonical: 'https://humphreydev.vercel.app/',
+    canonical: 'https://humphrey.techbiteventures.com/',
   },
 }
 
@@ -65,7 +65,7 @@ export default function Home() {
       <SEOTest
         title="Humphrey Otieno - Full Stack Software Engineer Portfolio"
         description="Experienced Full Stack Software Engineer specializing in React, Next.js, Python, and modern web technologies. Building exceptional digital experiences."
-        url="https://humphreydev.vercel.app/"
+        url="https://humphrey.techbiteventures.com/"
       />
       <ClientWrapper>
         <Header />

@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/private/', '/admin/'],
     },
-    sitemap: 'https://humphreydev.vercel.app/sitemap.xml',
+    sitemap: 'https://humphrey.techbiteventures.com/sitemap.xml',
   }
 }

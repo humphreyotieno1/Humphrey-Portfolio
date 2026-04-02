@@ -38,21 +38,21 @@ export const metadata: Metadata = {
     'devops',
     'ci/cd'
   ],
-  authors: [{ name: 'Humphrey Otieno', url: 'https://humphreydev.vercel.app/' }],
+  authors: [{ name: 'Humphrey Otieno', url: 'https://humphrey.techbiteventures.com/' }],
   creator: 'Humphrey Otieno',
   publisher: 'Humphrey Otieno',
-  metadataBase: new URL('https://humphreydev.vercel.app/'),
+  metadataBase: new URL('https://humphrey.techbiteventures.com/'),
   alternates: {
-    canonical: 'https://humphreydev.vercel.app/',
+    canonical: 'https://humphrey.techbiteventures.com/',
   },
   openGraph: {
     title: 'Humphrey Otieno - Full Stack Software Engineer',
     description: 'Experienced Full Stack Software Engineer specializing in React, Next.js, Python, and modern web technologies. Building exceptional digital experiences.',
-    url: 'https://humphreydev.vercel.app/',
+    url: 'https://humphrey.techbiteventures.com/',
     siteName: 'Humphrey Portfolio',
     images: [
       {
-        url: 'https://humphreydev.vercel.app/hum2.png',
+        url: 'https://humphrey.techbiteventures.com/hum2.png',
         width: 1200,
         height: 630,
         alt: 'Humphrey Otieno - Full Stack Software Engineer',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Humphrey Otieno - Full Stack Software Engineer',
     description: 'Experienced Full Stack Software Engineer specializing in React, Next.js, Python, and modern web technologies.',
-    images: ['https://humphreydev.vercel.app/hum2.png'],
+    images: ['https://humphrey.techbiteventures.com/hum2.png'],
     creator: '@_Banta__',
   },
   robots: {
