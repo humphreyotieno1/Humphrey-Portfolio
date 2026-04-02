@@ -112,7 +112,7 @@ const Work = () => {
       image: "/arthealth.png",
       technologies: ["Next.js", "Node.js", "Tailwind CSS"],
       github: "https://github.com/humphreyotieno1",
-      live: "https://artemis-health-network.vercel.app/",
+      live: "https://www.artemishealthnetworks.org/",
       featured: true,
     },
     {
