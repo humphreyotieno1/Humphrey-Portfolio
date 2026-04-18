@@ -10,7 +10,7 @@ const Work = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const [activeCategory, setActiveCategory] = useState('All')
   const [currentPage, setCurrentPage] = useState(1)
-  const projectsPerPage = 6
+  const projectsPerPage = 10
 
   const categories = ['All', 'E-Commerce', 'Healthcare', 'Services', 'Construction', 'Other']
 
@@ -45,6 +45,16 @@ const Work = () => {
       live: 'https://www.everydayresilience.co.ke/',
       featured: true
     },
+        {
+      title: "Afrex Adventures",
+      category: 'Services',
+      description: "An authentic African travel experience platform connecting global explorers with the wild through story-driven journeys and conservation-focused tourism.",
+      image: "/afrex.jpeg",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+      github: "https://github.com/humphreyotieno1",
+      live: "https://www.afrexadventures.co.ke/",
+      featured: true,
+    },
     {
       title: 'AIERGT Africa',
       category: 'Services',
@@ -75,26 +85,6 @@ const Work = () => {
     //   live: 'https://thebagbar.vercel.app/',
     //   featured: true
     // },
-    {
-      title: 'House of Banta',
-      category: 'E-Commerce',
-      description: 'House of Banta is a contemporary fashion and lifestyle brand specializing in apparel, bags, and everyday essentials designed for modern, style-conscious individuals.',
-      image: '/banta.png',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-      github: 'https://github.com/humphreyotieno1',
-      live: 'https://houseofbanta.vercel.app/',
-      featured: true
-    },
-    {
-      title: "Elsie's Crochet Studio",
-      category: 'E-Commerce',
-      description: "Handcrafted crochet pieces brought to life through a warm, story-driven online experience — from cozy blankets to elegant home décor, each stitch crafted with care.",
-      image: "/elsies.png",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-      github: "https://github.com/humphreyotieno1",
-      live: "https://www.elsiescrochet.com/",
-      featured: true,
-    },
     {
       title: "Maxon Computers",
       category: 'E-Commerce',
@@ -146,35 +136,35 @@ const Work = () => {
       featured: true,
     },
     {
-      title: "Deloitte Construction Limited",
-      category: 'Construction',
-      description: "Deloitte Construction Ltd is a Kenyan civil and real estate construction company delivering high-quality infrastructure and property developments.",
-      image: "/deloitte.png",
+      title: "Menengai Farmers Limited",
+      category: 'Services',
+      description: "Menengai Farmers Limited is a Kenyan agricultural company that specializes in the production and sale of high-quality agricultural products. We are committed to providing our customers with the best possible products and services.",
+      image: "/menengai.png",
       technologies: ["Next.js", "Node.js", "Tailwind CSS"],
       github: "https://github.com/humphreyotieno1",
-      live: "https://deloitteconstructionltd.co.ke/",
+      live: "https://menengaifarmersltd.co.ke/",
       featured: true,
     },
-    {
-      title: "Steric Tea",
-      category: 'E-Commerce',
-      description: "A digital presence for a premium tea producer in Limuru, Kenya, showcasing high-quality tea green leaf globally recognized as a unique beverage.",
-      image: "/steric.jpeg",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-      github: "https://github.com/humphreyotieno1",
-      live: "https://www.sterictea.co.ke/",
-      featured: true,
-    },
-    {
-      title: "Afrex Adventures",
-      category: 'Services',
-      description: "An authentic African travel experience platform connecting global explorers with the wild through story-driven journeys and conservation-focused tourism.",
-      image: "/afrex.jpeg",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-      github: "https://github.com/humphreyotieno1",
-      live: "https://www.afrexadventures.co.ke/",
-      featured: true,
-    },
+    // {
+    //   title: "Deloitte Construction Limited",
+    //   category: 'Construction',
+    //   description: "Deloitte Construction Ltd is a Kenyan civil and real estate construction company delivering high-quality infrastructure and property developments.",
+    //   image: "/deloitte.png",
+    //   technologies: ["Next.js", "Node.js", "Tailwind CSS"],
+    //   github: "https://github.com/humphreyotieno1",
+    //   live: "https://deloitteconstructionltd.co.ke/",
+    //   featured: true,
+    // },
+    // {
+    //   title: "Steric Tea",
+    //   category: 'E-Commerce',
+    //   description: "A digital presence for a premium tea producer in Limuru, Kenya, showcasing high-quality tea green leaf globally recognized as a unique beverage.",
+    //   image: "/steric.jpeg",
+    //   technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    //   github: "https://github.com/humphreyotieno1",
+    //   live: "https://www.sterictea.co.ke/",
+    //   featured: true,
+    // },
     {
       title: 'Techbite Ventures',
       category: 'Services',
@@ -204,6 +194,26 @@ const Work = () => {
       github: 'https://github.com/humphreyotieno1',
       live: 'https://www.grahadventures.co.ke/',
       featured: true
+    },
+    {
+      title: 'House of Banta',
+      category: 'E-Commerce',
+      description: 'House of Banta is a contemporary fashion and lifestyle brand specializing in apparel, bags, and everyday essentials designed for modern, style-conscious individuals.',
+      image: '/banta.png',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://houseofbanta.vercel.app/',
+      featured: true
+    },
+    {
+      title: "Elsie's Crochet Studio",
+      category: 'E-Commerce',
+      description: "Handcrafted crochet pieces brought to life through a warm, story-driven online experience — from cozy blankets to elegant home décor, each stitch crafted with care.",
+      image: "/elsies.png",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+      github: "https://github.com/humphreyotieno1",
+      live: "https://www.elsiescrochet.com/",
+      featured: true,
     },
     {
       title: "Biteplay",

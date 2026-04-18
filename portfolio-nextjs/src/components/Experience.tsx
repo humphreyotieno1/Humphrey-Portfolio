@@ -12,11 +12,11 @@ const Experience = () => {
   const experiences = [
     {
       company: 'Eros Africa DMC Limited',
-      position: 'Web Developer',
-      duration: 'July 2025- Present',
+      position: 'Software Developer',
+      duration: 'July 2025 - Present',
       location: 'Nairobi, Kenya',
-      description: 'Recently joined Eros Africa Ltd as a Software Developer Intern, where I’m gaining hands-on experience in full-stack development and contributing to real-world projects that drive innovation and digital transformation across Africa. I am Building and maintaining responsive web applications, Developing and integrating RESTful APIs to connect backend services with user interfaces, Working in Agile sprints, participating in daily standups, and collaborating, Writing clean, testable code and fixing bugs across the stack.',
-      technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker', 'FastAPI', 'CRM', 'Python'],
+      description: 'Following a successful internship, I was retained as a Software Developer where I continue to drive digital transformation across Africa. I specialize in building and maintaining high-performance, responsive web applications and developing robust RESTful APIs. Beyond core development, I also contribute to the brand\'s digital presence through social media marketing, video editing, and graphic design, collaborating in Agile sprints to deliver comprehensive digital solutions.',
+      technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Docker', 'FastAPI', 'CRM', 'Python', 'Social Media Marketing', 'Video Editing', 'Graphics Design'],
       link: 'https://www.erosafrica.com/'
     },
     {
@@ -26,7 +26,7 @@ const Experience = () => {
       location: 'Eldoret, Kenya',
       description: 'Frontend Web Developer at LegalizeMe, a startup dedicated to providing accessible law resources through a user-friendly website. Focused on building responsive interfaces and delivering seamless digital experiences.',
       technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Django', 'AWS', 'Tailwind CSS', 'Framer Motion'],
-      link: 'https://www.legalizeme.site/'
+      link: 'https://www.legalizeme.co.ke/'
     },
   ]
 
