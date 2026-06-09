@@ -12,6 +12,7 @@ export const site = {
   resume: '/resume.pdf',
   logo: '/favicon.ico',
   portrait: '/hum2.png',
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://humphrey.techbiteventures.com',
   social: [
     { label: 'GitHub', href: 'https://github.com/humphreyotieno1' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/humphrey-otieno' },
@@ -25,18 +26,48 @@ export const site = {
     { label: 'Experience', href: '#experience' },
     { label: 'Work', href: '#work' },
     { label: 'Certifications', href: '#certifications' },
+    { label: 'Services', href: '#services' },
     { label: 'Contact', href: '#contact' },
   ],
 }
 
-export const skills = [
-  { name: 'React / Next.js', level: 90 },
-  { name: 'TypeScript', level: 85 },
-  { name: 'Node.js / Python', level: 80 },
-  { name: 'PostgreSQL / MongoDB', level: 75 },
-  { name: 'UI Design & Tailwind', level: 85 },
-  { name: 'DevOps & Performance', level: 70 },
+export const languages = [
+  { label: 'Next.js', proficiency: 85 },
+  { label: 'Golang', proficiency: 60 },
+  { label: 'HTML5', proficiency: 95 },
+  { label: 'CSS3', proficiency: 90 },
+  { label: 'JavaScript', proficiency: 80 },
+  { label: 'TypeScript', proficiency: 75 },
+  { label: 'Node.js', proficiency: 80 },
+  { label: 'React', proficiency: 80 },
+  { label: 'Python', proficiency: 85 },
+  { label: 'Flask', proficiency: 85 },
+  { label: 'Databases', proficiency: 85 },
+  { label: 'MySQL', proficiency: 85 },
+  { label: 'PostgreSQL', proficiency: 85 },
+  { label: 'Tailwind CSS', proficiency: 90 },
+  { label: 'Django', proficiency: 85 },
+  { label: 'FastAPI', proficiency: 85 },
+  { label: 'Docker', proficiency: 85 },
+  { label: 'Git', proficiency: 85 },
 ]
+
+export const additionalSkillAreas = [
+  {
+    title: 'Frontend Development',
+    description: 'Responsive design, modern CSS, component architecture, state management',
+  },
+  {
+    title: 'Backend Development',
+    description: 'API design, server-side logic, database optimization, authentication',
+  },
+  {
+    title: 'DevOps & Tools',
+    description: 'Git, Docker, CI/CD, cloud deployment, performance monitoring',
+  },
+]
+
+export const projectCategories = ['All', 'E-Commerce', 'Healthcare', 'Services', 'Construction', 'Other'] as const
 
 export const experiences = [
   {
@@ -61,22 +92,28 @@ export const experiences = [
 
 export const services = [
   {
-    title: 'Full Stack Development',
+    title: 'Full Stack Web Development',
     price: 'Custom quote',
+    image: '/fullstack.jpg',
     description:
-      'End-to-end web applications — frontend, backend, APIs, and deployment — built to scale with your business.',
+      'Dynamic, interactive web applications that provide seamless digital experiences — frontend, backend, APIs, and deployment built to scale.',
+    features: ['Frontend & Backend', 'API Integration', 'Database Design', 'Performance Optimization'],
   },
   {
-    title: 'Product & Web Design',
+    title: 'Database and API Design',
     price: 'Custom quote',
+    image: '/database.jpg',
     description:
-      'Clean, editorial interfaces with strong typography, responsive layouts, and user flows that feel effortless.',
+      'Robust, scalable databases and RESTful APIs tailored to your product — from data modeling through security and long-term maintainability.',
+    features: ['Database Architecture', 'RESTful APIs', 'Data Modeling', 'Security Implementation'],
   },
   {
-    title: 'API & Database Design',
+    title: 'Web Design',
     price: 'Custom quote',
+    image: '/webdesign.jpg',
     description:
-      'Robust data models and RESTful APIs designed for performance, security, and long-term maintainability.',
+      'Visually appealing, user-friendly interfaces with strong typography, responsive layouts, and flows that feel effortless.',
+    features: ['UI/UX Design', 'Responsive Layouts', 'Visual Branding', 'User Experience'],
   },
 ]
 
@@ -88,6 +125,7 @@ export const projects = [
       'Hecta Consulting is a multidisciplinary healthcare consultancy firm dedicated to strengthening health and community systems across Africa, offering technical expertise and evidence-based insights to design sustainable solutions.',
     image: '/hecta.png',
     live: 'https://www.hectaconsulting.com/',
+    technologies: ["Next.js","TypeScript","Tailwind CSS","PostgreSQL"],
   },
   {
     title: 'Eros Africa Limited',
@@ -96,6 +134,7 @@ export const projects = [
       'A premier DMC bridging global demand and destination excellence — B2B, MICE, FIT, and international school groups, powered by a real-time booking portal across the globe.',
     image: '/erosafrica.png',
     live: 'https://www.erosafrica.com/',
+    technologies: ["Next.js","TypeScript","Tailwind CSS","PostgreSQL"],
   },
   {
     title: 'Denmar Tours and Travels',
@@ -104,6 +143,7 @@ export const projects = [
       'A tour and travel agency website built with Next.js and TypeScript. It provides a seamless experience for users to book tours and travels.',
     image: '/denmar.png',
     live: 'https://www.denmartravel.co.ke/',
+    technologies: ["Next.js","TypeScript","Tailwind CSS","PostgreSQL","OpenAI"],
   },
   {
     title: 'Chapchap Spares',
@@ -112,6 +152,7 @@ export const projects = [
       "Chapchap Spares is Kenya's leading destination for premium motorcycle parts and accessories. We're on a mission to keep your ride smooth and your engine powerful.",
     image: '/chapchap.png',
     live: 'https://www.chapchapspares.co.ke/',
+    technologies: ["Next.js","TypeScript","Tailwind CSS","Payment Gateway"],
   },
   {
     title: 'Everyday Resilience Counselling Kenya',
@@ -120,6 +161,7 @@ export const projects = [
       'A counselling agency website built with Next.js and TypeScript. It provides a seamless experience for users to book counselling sessions.',
     image: '/everyday.png',
     live: 'https://www.everydayresilience.co.ke/',
+    technologies: ["Next.js","TypeScript","Tailwind CSS"],
   },
   {
     title: 'Afrex Adventures',
@@ -128,6 +170,7 @@ export const projects = [
       'An authentic African travel experience platform connecting global explorers with the wild through story-driven journeys and conservation-focused tourism.',
     image: '/afrex.jpeg',
     live: 'https://www.afrexadventures.co.ke/',
+    technologies: ["Next.js","TypeScript","Tailwind CSS"],
   },
   {
     title: 'NaInfluence',
@@ -136,6 +179,7 @@ export const projects = [
       'NaInfluence pairs growing brands with verified nano and micro creators — with escrow-protected payments, AI-written briefs, and results you can actually see.',
     image: '/nainfluence.png',
     live: 'https://www.nainfluence.com/',
+    technologies: ["Next.js","TypeScript","Tailwind CSS","OpenAI"],
   },
   {
     title: 'NETSOFT Solutions',
@@ -144,6 +188,7 @@ export const projects = [
       'Bridging the gap between high-performance software engineering and robust physical infrastructure. Managed IT solutions designed for the modern enterprise—from the fiber optics in your walls to the applications on your screens.',
     image: '/netsoft.png',
     live: 'https://www.netsoftsolutions.co.ke/',
+    technologies: ["Next.js","TypeScript","Tailwind CSS"],
   },
   {
     title: 'AIERGT Africa',
@@ -152,6 +197,7 @@ export const projects = [
       'African Institute for Environmental Research and Geospatial Technology (AIERGT) is a consultancy and training organisation dedicated to providing environmental research, geospatial-technology solutions and capacity-building across Africa.',
     image: '/aiergt.png',
     live: 'https://aiergt.africa/',
+    technologies: ["Next.js","TypeScript","Tailwind CSS","PostgreSQL","OpenAI"],
   },
   {
     title: 'LegalizeMe',
@@ -160,6 +206,7 @@ export const projects = [
       'A legal AI platform build with Next.js and TypeScript. It provides legal resources to users through a user-friendly website. It also has a chatbot that can answer legal questions.',
     image: '/legalize.jpeg',
     live: 'https://www.legalizeme.co.ke/',
+    technologies: ["Next.js","TypeScript","Tailwind CSS","Django","PostgreSQL","OpenAI"],
   },
   {
     title: 'Maxon Computers',
@@ -168,6 +215,7 @@ export const projects = [
       'Premium technology retailer showcasing the latest computers, laptops, and accessories with a seamless shopping experience.',
     image: '/maxon.png',
     live: 'https://www.maxoncomputers.co.ke/',
+    technologies: ["Next.js","Payment Gateway","Node.js","Tailwind CSS","FastAPI"],
   },
   {
     title: 'Artemis Health Networks',
@@ -176,6 +224,7 @@ export const projects = [
       'Artemis Health Network is a premier consulting firm dedicated to strengthening health systems across Africa through data-driven policies and sustainable financing.',
     image: '/arthealth.png',
     live: 'https://www.artemishealthnetworks.org/',
+    technologies: ["Next.js","Node.js","Tailwind CSS"],
   },
   {
     title: 'Uphome Funeral Home',
@@ -184,6 +233,7 @@ export const projects = [
       'Dedicated funeral service provider rooted in empathy and care, committed to upholding the highest standards of funeral support with dignity and compassion.',
     image: '/uphomes.jpeg',
     live: 'https://www.uphomesfuneral.co.ke/',
+    technologies: ["Next.js","Node.js","Tailwind CSS"],
   },
   {
     title: 'Ume Funeral Home',
@@ -192,6 +242,7 @@ export const projects = [
       'Ume Funeral Home is a family-owned business that has been providing funeral services to the community for over 20 years. We are committed to providing dignified and compassionate funeral services to families in their time of need.',
     image: '/umehome.png',
     live: 'https://www.umefuneralhome.co.ke/',
+    technologies: ["Next.js","Node.js","Tailwind CSS"],
   },
   {
     title: 'Artemis Outsourcing Limited',
@@ -200,6 +251,7 @@ export const projects = [
       'Artemis Outsourcing Limited is a regional-focused multi-disciplinary Consulting firm providing technical assistance in Human resource management, Talent acquisition, Training and staff development, capacity building, Fund management, Project management and Research.',
     image: '/artoutsourcing.png',
     live: 'https://www.artemisltd.co.ke/',
+    technologies: ["Next.js","Node.js","Tailwind CSS"],
   },
   {
     title: 'Menengai Farmers Limited',
@@ -208,6 +260,7 @@ export const projects = [
       'Menengai Farmers Limited is a Kenyan agricultural company that specializes in the production and sale of high-quality agricultural products. We are committed to providing our customers with the best possible products and services.',
     image: '/menengai.png',
     live: 'https://menengaifarmersltd.co.ke/',
+    technologies: ["Next.js","Node.js","Tailwind CSS"],
   },
   {
     title: 'Techbite Ventures',
@@ -216,6 +269,7 @@ export const projects = [
       'Techbite Ventures is a software development agency based in Nairobi, Kenya. We build digital products that drive growth, combining technical excellence with business insight to create solutions that deliver real results.',
     image: '/techbite.jpeg',
     live: 'https://www.techbiteventures.com/',
+    technologies: ["Next.js","TypeScript","Tailwind CSS"],
   },
   {
     title: 'Grahad Ventures Limited',
@@ -224,6 +278,7 @@ export const projects = [
       'A construction and hardware supplies company website built with Next.js and TypeScript. It provides a seamless experience for users to book tours and travels.',
     image: '/grahad.png',
     live: 'https://www.grahadventures.co.ke/',
+    technologies: ["Next.js","Golang","PostgreSQL","Tailwind CSS"],
   },
   {
     title: 'House of Banta',
@@ -232,6 +287,7 @@ export const projects = [
       'House of Banta is a contemporary fashion and lifestyle brand specializing in apparel, bags, and everyday essentials designed for modern, style-conscious individuals.',
     image: '/banta.png',
     live: 'https://houseofbanta.vercel.app/',
+    technologies: ["Next.js","TypeScript","Tailwind CSS"],
   },
   {
     title: "Elsie's Crochet Studio",
@@ -240,6 +296,7 @@ export const projects = [
       'Handcrafted crochet pieces brought to life through a warm, story-driven online experience — from cozy blankets to elegant home décor, each stitch crafted with care.',
     image: '/elsies.png',
     live: 'https://www.elsiescrochet.com/',
+    technologies: ["Next.js","TypeScript","Tailwind CSS"],
   },
   {
     title: 'Biteplay',
@@ -248,6 +305,7 @@ export const projects = [
       'Biteplay is a movie streaming platform that offers a wide range of movies and TV shows, with a user-friendly interface for searching, watching, and sharing content.',
     image: '/biteplay.png',
     live: 'https://bite-play.vercel.app/',
+    technologies: ["React","TypeScript","Tailwind CSS","Framer Motion","PostgreSQL"],
   },
   {
     title: "Chrispin Oguna's Portfolio",
@@ -256,6 +314,7 @@ export const projects = [
       'A portfolio website for an ICT instructor, showcasing his skills, projects, and experiences in the tech industry. The platform aims to provide a comprehensive overview of his work and expertise to potential clients and employers.',
     image: '/chris.png',
     live: 'https://chrispinoguna.vercel.app/',
+    technologies: ["Next.js","TypeScript","Tailwind CSS","Framer Motion"],
   },
   {
     title: "Mary M'Mukindia's Portfolio",
@@ -264,6 +323,7 @@ export const projects = [
       "Mary M'Mukindia is a catalyst for leadership transformation. She believes in the power of clarity, conviction, and bold leadership to create lasting impact in business and society.",
     image: '/mary.png',
     live: 'https://mary-mmukindia-coaching.vercel.app/',
+    technologies: ["Next.js","TypeScript","Tailwind CSS","Framer Motion"],
   },
 ]
 
