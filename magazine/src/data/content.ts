@@ -275,7 +275,7 @@ export const projects = [
     title: 'Grahad Ventures Limited',
     category: 'Construction',
     description:
-      'A construction and hardware supplies company website built with Next.js and TypeScript. It provides a seamless experience for users to book tours and travels.',
+      'A construction and hardware supplies company website built with Next.js and TypeScript. It provides a seamless experience for users to buy construction and hardware supplies.',
     image: '/grahad.png',
     live: 'https://www.grahadventures.co.ke/',
     technologies: ["Next.js","Golang","PostgreSQL","Tailwind CSS"],
