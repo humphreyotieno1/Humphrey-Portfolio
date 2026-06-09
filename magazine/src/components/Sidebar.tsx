@@ -1,11 +1,24 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import Image from 'next/image'
 import { site } from '@/data/content'
+import { useScrollSpy } from '@/hooks/useScrollSpy'
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false)
+  const sectionIds = useMemo(
+    () => site.nav.map((item) => item.href.replace('#', '')),
+    [],
+  )
+  const activeId = useScrollSpy(sectionIds)
+
+  const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    event.preventDefault()
+    setOpen(false)
+    const target = document.querySelector(href)
+    target?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 
   return (
     <>
@@ -37,7 +50,11 @@ export default function Sidebar() {
           open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
-        <a href="#home" className="mb-12 block" onClick={() => setOpen(false)}>
+        <a
+          href="#home"
+          className="mb-10 block"
+          onClick={(event) => handleNavClick(event, '#home')}
+        >
           <Image
             src={site.logo}
             alt={`${site.name} logo`}
@@ -51,22 +68,45 @@ export default function Sidebar() {
           <p className="mt-1 font-sans text-xl text-ink-muted">{site.name.split(' ').slice(1).join(' ')}</p>
         </a>
 
-        <nav className="flex flex-1 flex-col gap-1">
-          {site.nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="rounded-sm px-2 py-2.5 font-mono text-sm tracking-wide text-ink-muted transition-colors hover:bg-paper-dark hover:text-ink"
-            >
-              {item.label}
-            </a>
-          ))}
+        <nav className="flex flex-1 flex-col gap-0.5" aria-label="Page sections">
+          {site.nav.map((item) => {
+            const sectionId = item.href.replace('#', '')
+            const isActive = activeId === sectionId
+
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={(event) => handleNavClick(event, item.href)}
+                aria-current={isActive ? 'location' : undefined}
+                className={`group flex items-center gap-2 py-2.5 font-mono text-sm tracking-wide transition-colors duration-200 ${
+                  isActive ? 'text-ink' : 'text-ink-faint hover:text-ink-muted'
+                }`}
+              >
+                <span
+                  className={`text-accent transition-all duration-200 ${
+                    isActive ? 'w-3 translate-x-0 opacity-100' : 'w-0 -translate-x-1 overflow-hidden opacity-0'
+                  }`}
+                  aria-hidden
+                >
+                  →
+                </span>
+                <span className={`relative ${isActive ? 'font-medium' : ''}`}>
+                  {item.label}
+                  <span
+                    className={`absolute -bottom-0.5 left-0 h-px bg-accent transition-all duration-200 ${
+                      isActive ? 'w-full' : 'w-0 group-hover:w-1/2'
+                    }`}
+                  />
+                </span>
+              </a>
+            )
+          })}
         </nav>
 
         <div className="mt-auto space-y-4 border-t border-line pt-6">
           <p className="font-mono text-xs leading-relaxed text-ink-faint">{site.location}</p>
-          <a href={`mailto:${site.email}`} className="block text-sm text-ink hover:text-accent">
+          <a href={`mailto:${site.email}`} className="block text-sm text-ink transition-colors hover:text-accent">
             {site.email}
           </a>
           <p className="font-mono text-xs text-ink-faint">© {new Date().getFullYear()} Humphrey Otieno</p>
