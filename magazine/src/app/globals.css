@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Suse+Mono:wght@400;500;600&family=Suse:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: #f4efe6;
+  --color-paper-dark: #ebe4d8;
+  --color-ink: #1c1917;
+  --color-ink-muted: #6b635a;
+  --color-ink-faint: #a39a90;
+  --color-accent: #8b4513;
+  --color-accent-soft: #c4a574;
+  --color-line: #d8cfc2;
+
+  --font-sans: 'Suse', system-ui, sans-serif;
+  --font-mono: 'Suse Mono', ui-monospace, monospace;
+  --font-serif: 'Suse', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent-soft/40 text-ink;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply font-mono text-xs uppercase tracking-[0.25em] text-ink-muted;
+  }
+
+  .section-title {
+    @apply font-sans text-4xl font-semibold leading-[1.05] text-ink md:text-5xl lg:text-6xl;
+  }
+
+  .story-body {
+    @apply text-base leading-relaxed text-ink-muted md:text-lg;
+  }
+
+  .editorial-link {
+    @apply inline-flex items-center gap-2 border-b border-ink/30 pb-1 font-mono text-sm uppercase tracking-widest text-ink transition-colors hover:border-accent hover:text-accent;
+  }
+
+  .skill-bar {
+    @apply h-1 overflow-hidden rounded-full bg-line;
+  }
+
+  .skill-fill {
+    @apply h-full rounded-full bg-accent transition-all duration-700;
+  }
+}
