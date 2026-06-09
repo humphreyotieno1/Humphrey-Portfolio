@@ -1,3 +1,4 @@
+import ClientWrapper from '@/components/ClientWrapper'
 import Sidebar from '@/components/Sidebar'
 import HeroSection from '@/components/HeroSection'
 import StorySection from '@/components/StorySection'
@@ -10,7 +11,7 @@ import ContactSection from '@/components/ContactSection'
 
 export default function Home() {
   return (
-    <>
+    <ClientWrapper>
       <Sidebar />
       <main className="min-h-screen lg:pl-72">
         <div className="mx-auto max-w-5xl px-6 py-8 md:px-10 md:py-12">
@@ -28,6 +29,6 @@ export default function Home() {
           </footer>
         </div>
       </main>
-    </>
+    </ClientWrapper>
   )
 }
