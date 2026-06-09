@@ -7,7 +7,7 @@ export const site = {
   intro:
     "Hello, my name is Humphrey. I'm a software engineer who cares about clarity, craft, and the people on the other side of the screen. Since 2022 I've been turning ideas into fast, accessible web experiences for clients across Kenya and beyond.",
   story:
-    'My work sits at the intersection of engineering and storytelling. Whether it is a DMC booking portal, a motorcycle parts shop, or an AI-powered legal platform, I aim for interfaces that feel calm, intentional, and easy to trust.',
+    'My work blends engineering expertise with a strong sense of narrative. No matter the project or industry, I strive to create digital experiences that are thoughtful, user-friendly, and instill confidence.',
   email: 'humphreyotieno04@gmail.com',
   resume: '/resume.pdf',
   logo: '/favicon.ico',
