@@ -7,12 +7,12 @@ export default function HeroSection() {
       <div className="grid items-end gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
           <p className="section-label mb-6">{site.role}</p>
-          <h2 className="section-title mb-8 max-w-3xl">
+          <h1 className="section-title mb-8 max-w-3xl">
             Building digital
             <span className="italic text-accent"> stories</span>
             <br />
             for the web.
-          </h2>
+          </h1>
           <p className="story-body mb-10 max-w-xl">{site.tagline}</p>
           <div className="flex flex-wrap gap-4">
             <a href="#work" className="editorial-link">

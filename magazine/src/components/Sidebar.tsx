@@ -47,7 +47,7 @@ export default function Sidebar() {
             priority
           />
           <p className="section-label mb-2">Portfolio</p>
-          <h1 className="font-sans text-3xl font-semibold leading-none text-ink">{site.name.split(' ')[0]}</h1>
+          <p className="font-sans text-3xl font-semibold leading-none text-ink">{site.name.split(' ')[0]}</p>
           <p className="mt-1 font-sans text-xl text-ink-muted">{site.name.split(' ').slice(1).join(' ')}</p>
         </a>
 

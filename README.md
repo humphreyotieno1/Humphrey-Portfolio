@@ -1,47 +1,21 @@
 # Humphrey Portfolio
 
-A modern, responsive portfolio website built with React and Python. This project showcases professional work, skills, and achievements through an elegant and interactive user interface.
+Live site: **[humphrey.techbiteventures.com](https://humphrey.techbiteventures.com)**
 
-## Project Structure
+The deployed portfolio is **`magazine/`** — a Next.js magazine-style site with projects, certifications, contact form, and SEO.
 
-The project is organized into two main directories:
+## Quick start
 
-### Client (`/client`)
-The frontend application built with React, featuring:
-- Modern UI components using Chakra UI
-- Smooth animations with Framer Motion
-- Responsive design with Tailwind CSS
-- Interactive splash screen and header components
-- Vercel Analytics integration for performance tracking
+```bash
+cd magazine
+npm install
+npm run dev
+```
 
-#### Key Files:
-- `src/App.jsx` - Main application component
-- `src/components/` - Reusable React components
-- `src/assets/` - Static assets and media files
+## Other folders
 
-### Server (`/server`)
-The backend service built with Python, handling:
-- API endpoints for portfolio data
-- Contact form functionality
-- Server-side rendering capabilities
+- **`magazine/`** — production portfolio (deploy this)
+- **`portfolio-nextjs/`** — earlier full-featured portfolio
+- **`client/`** — legacy React frontend
 
-#### Key Files:
-- `app.py` - Main server application
-- `requirements.txt` - Python dependencies
-- `.env` - Environment configuration
-
-## Features
-- Modern, responsive design
-- Smooth animations and transitions
-- Interactive components
-- Contact form functionality
-- Analytics integration
-- Performance optimized
-
-## Technologies Used
-- React 18
-- Python
-- Chakra UI
-- Framer Motion
-- Tailwind CSS
-- Vercel Analytics 
+See [`magazine/README.md`](magazine/README.md) for deployment and environment variables.
