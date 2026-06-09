@@ -18,13 +18,13 @@ export default function Portfolio() {
       description: "Discover the latest in technology with Maxon's premium selection of computers, laptops, and accessories."
     },
     
-    {
-      name: "W.G.Gitau and Associates",
-      company: "W.G.Gitau and Associates",
-      imgUrl: "/wg.png",
-      liveUrl: "https://www.wggitau.co.ke/",
-      description: "W.G Gitau & Associates (W.G.G) is an independent Accounting and Audit Consulting firm based in Kenya that is registered with ICPAK as a practising Certified Public Accountants."
-    },
+    // {
+    //   name: "W.G.Gitau and Associates",
+    //   company: "W.G.Gitau and Associates",
+    //   imgUrl: "/wg.png",
+    //   liveUrl: "https://www.wggitau.co.ke/",
+    //   description: "W.G Gitau & Associates (W.G.G) is an independent Accounting and Audit Consulting firm based in Kenya that is registered with ICPAK as a practising Certified Public Accountants."
+    // },
     {
       name: "Chrispin Oguna's Portfolio",
       company: "Chrispin Oguna",

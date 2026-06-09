@@ -26,6 +26,16 @@ const Work = () => {
       featured: true
     },
     {
+      title: 'Eros Africa Limited',
+      category: 'Services',
+      description: 'A premier DMC bridging global demand and destination excellence — B2B, MICE, FIT, and international school groups, powered by a real-time booking portal across the globe.',
+      image: '/erosafrica.png',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://www.erosafrica.com/',
+      featured: true
+    },
+    {
       title: 'Denmar Tours and Travels',
       category: 'Services',
       description: 'A tour and travel agency website built with Next.js and TypeScript. It provides a seamless experience for users to book tours and travels.',
@@ -33,6 +43,16 @@ const Work = () => {
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'OpenAI'],
       github: 'https://github.com/humphreyotieno1',
       live: 'https://www.denmartravel.co.ke/',
+      featured: true
+    },
+    {
+      title: 'Chapchap Spares',
+      category: 'E-Commerce',
+      description: "Chapchap Spares is Kenya's leading destination for premium motorcycle parts and accessories. We're on a mission to keep your ride smooth and your engine powerful.",
+      image: '/chapchap.png',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Payment Gateway'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://www.chapchapspares.co.ke/',
       featured: true
     },
     {
@@ -45,7 +65,7 @@ const Work = () => {
       live: 'https://www.everydayresilience.co.ke/',
       featured: true
     },
-        {
+    {
       title: "Afrex Adventures",
       category: 'Services',
       description: "An authentic African travel experience platform connecting global explorers with the wild through story-driven journeys and conservation-focused tourism.",
@@ -54,6 +74,26 @@ const Work = () => {
       github: "https://github.com/humphreyotieno1",
       live: "https://www.afrexadventures.co.ke/",
       featured: true,
+    },
+    {
+      title: 'NaInfluence',
+      category: 'Services',
+      description: 'NaInfluence pairs growing brands with verified nano and micro creators — with escrow-protected payments, AI-written briefs, and results you can actually see.',
+      image: '/nainfluence.png',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'OpenAI'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://www.nainfluence.com/',
+      featured: true
+    },
+    {
+      title: 'NETSOFT Solutions',
+      category: 'Services',
+      description: 'Bridging the gap between high-performance software engineering and robust physical infrastructure. Managed IT solutions designed for the modern enterprise—from the fiber optics in your walls to the applications on your screens.',
+      image: '/netsoft.png',
+      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      github: 'https://github.com/humphreyotieno1',
+      live: 'https://www.netsoftsolutions.co.ke/',
+      featured: true
     },
     {
       title: 'AIERGT Africa',
@@ -175,16 +215,16 @@ const Work = () => {
       live: 'https://www.techbiteventures.com/',
       featured: true
     },
-    {
-      title: 'W.G.Gitau and Associates',
-      category: 'Services',
-      description: 'W.G Gitau & Associates (W.G.G) is an independent Accounting and Audit Consulting firm based in Kenya that is registered with ICPAK as a practising Certified Public Accountants.',
-      image: '/wg.png',
-      technologies: ['NextJS', 'TailwindCSS'],
-      github: 'https://github.com/humphreyotieno1',
-      live: 'https://www.wggitau.co.ke/',
-      featured: true
-    },
+    // {
+    //   title: 'W.G.Gitau and Associates',
+    //   category: 'Services',
+    //   description: 'W.G Gitau & Associates (W.G.G) is an independent Accounting and Audit Consulting firm based in Kenya that is registered with ICPAK as a practising Certified Public Accountants.',
+    //   image: '/wg.png',
+    //   technologies: ['NextJS', 'TailwindCSS'],
+    //   github: 'https://github.com/humphreyotieno1',
+    //   live: 'https://www.wggitau.co.ke/',
+    //   featured: true
+    // },
     {
       title: 'Grahad Ventures Limited',
       category: 'Construction',
