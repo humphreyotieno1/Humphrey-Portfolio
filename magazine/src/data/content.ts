@@ -9,7 +9,7 @@ export const site = {
   story:
     'My work blends engineering expertise with a strong sense of narrative. No matter the project or industry, I strive to create digital experiences that are thoughtful, user-friendly, and instill confidence.',
   email: 'humphreyotieno04@gmail.com',
-  resume: '/resume.pdf',
+  resume: '/Humphrey_Otieno_Resume.pdf',
   logo: '/favicon.ico',
   portrait: '/hum2.png',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://humphrey.techbiteventures.com',
