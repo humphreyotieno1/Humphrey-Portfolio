@@ -118,14 +118,14 @@ export const services = [
 ]
 
 export const projects = [
-    {
+  {
     title: 'Scientists of Kenya Association (SCOKA)',
     category: 'Other',
     description:
       'The Scientists of Kenya Association (SCOKA) is a non-profit scientific society founded to empower young scientists, early-career researchers, and seasoned professionals across diverse disciplines in Kenya. Established in April 2022 by Everlyn Kimanthi, the organization focuses on bridging the gap between academia and the job market through mentorship, networking, and advocacy.',
     image: '/scoka.png',
     live: 'https://scoka.co.ke/',
-    technologies: ["Next.js","TypeScript","Tailwind CSS"],
+    technologies: ["PHP","JavaScript","Tailwind CSS", "MySQL"],
   },
   {
     title: 'Hecta Consulting',
