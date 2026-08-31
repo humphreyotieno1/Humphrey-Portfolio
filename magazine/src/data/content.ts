@@ -11,7 +11,7 @@ export const site = {
   email: 'humphreyotieno04@gmail.com',
   resume: '/Humphrey_Otieno_Resume.pdf',
   logo: '/favicon.ico',
-  portrait: '/hum2.png',
+  portrait: '/humhero.jpeg',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://humphrey.techbiteventures.com',
   social: [
     { label: 'GitHub', href: 'https://github.com/humphreyotieno1' },
